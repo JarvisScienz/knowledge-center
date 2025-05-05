@@ -4,7 +4,7 @@ import MainContent from './components/MainContent';
 import { KnowledgeEntry, Command } from './types';
 import { KnowledgeData } from './types/KnowledgeData';
 import { addEntryToKnowledgeBase, searchKnowledgeBase, exportKnowledgeBase } from './utils/knowledgeBase';
-import initialData from './data/knowledge-base-bioduct.json';
+import initialData from './data/knowledge-base.json';
 import './App.css';
 
 function App() {
@@ -12,11 +12,11 @@ function App() {
   const [knowledgeData, setKnowledgeData] = useState<KnowledgeData>({});
   const [selectedMainTopic, setSelectedMainTopic] = useState<string | null>(null);
   const [selectedTopic, setSelectedTopic] = useState<string | null>(null);
-  const [selectedEntry, setSelectedEntry] = useState<KnowledgeEntry | null>(null);
+  const [, setSelectedEntry] = useState<KnowledgeEntry | null>(null);
   const [searchResults, setSearchResults] = useState<KnowledgeEntry[]>([]);
-  const [selectedObject, setSelectedObject] = useState<string | null>(null);
-  const [currentAnswer, setCurrentAnswer] = useState("");
-  const [chatMessages, setChatMessages] = useState<{type: 'command' | 'result', content: string}[]>([]);
+  const [, setSelectedObject] = useState<string | null>(null);
+  const [, setCurrentAnswer] = useState("");
+  const [, setChatMessages] = useState<{type: 'command' | 'result', content: string}[]>([]);
   
   interface Message {
     id: number;
