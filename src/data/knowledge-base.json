@@ -1,0 +1,26 @@
+[
+  {
+    "main-topic": "Java",
+    "topic": "Thread",
+    "object": "Why is Java not a pure object-oriented language?",
+    "answer": "It is not a pure object-oriented language because it supports primitive data types like int, double, and char, which are not objects, and it supports static methods and variables."
+  },
+  {
+    "main-topic": "Java",
+    "topic": "Thread",
+    "object": "What is a thread in Java?",
+    "answer": "A thread in Java is a lightweight process that allows concurrent execution of two or more parts of a program for maximum utilization of CPU. Each thread is a separate path of execution within a program."
+  },
+  {
+    "main-topic": "React",
+    "topic": "Hooks",
+    "object": "What are React Hooks?",
+    "answer": "React Hooks are functions that let you use state and other React features in functional components. They were introduced in React 16.8 to allow functional components to have state and lifecycle methods."
+  },
+  {
+    "main-topic": "React",
+    "topic": "Components",
+    "object": "What is the difference between functional and class components?",
+    "answer": "Functional components are simpler JavaScript functions that return JSX, while class components are ES6 classes that extend React.Component. Functional components can now use hooks to manage state and lifecycle, making them more flexible and easier to test."
+  }
+] 
