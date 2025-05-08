@@ -2,7 +2,7 @@
   "name": "Knowledge Center",
   "short_name": "Knowledge",
   "description": "A knowledge management system",
-  "start_url": "/",
+  "start_url": "/knowledge-center/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
