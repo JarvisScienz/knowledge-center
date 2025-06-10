@@ -24,3 +24,4 @@ dist-ssr
 *.sw?
 
 src/data/knowledge-base-bioduct.json
+tsconfig.tsbuildinfo

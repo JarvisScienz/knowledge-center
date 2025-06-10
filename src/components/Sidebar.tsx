@@ -124,7 +124,7 @@ function Sidebar({
               <h3 className="tree-title">Knowledge Base</h3>
               
               {/* Main Topics */}
-              {Object.keys(knowledgeData).map(mainTopic => (
+              {Object.keys(knowledgeData).sort().map(mainTopic => (
                 <div key={mainTopic} className="tree-item">
                   <div 
                     className={`main-topic ${selectedMainTopic === mainTopic ? 'selected' : ''}`}
