@@ -124,7 +124,7 @@ const ChatInput = ({ onCommand }: ChatInputProps) => {
           <textarea
             value={input}
             onChange={handleInputChange}
-            placeholder="Scrivi un messaggio..."
+            placeholder="Type @ followed by a command (e.g., @show java) or search term"
             rows={1}
             className="chat-textarea"
             onKeyDown={(e) => {

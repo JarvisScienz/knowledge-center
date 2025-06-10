@@ -1,15 +1,289 @@
 [
   {
     "main-topic": "Java",
-    "topic": "Thread",
+    "topic": "Definition",
     "object": "Why is Java not a pure object-oriented language?",
-    "answer": "It is not a pure object-oriented language because it supports primitive data types like int, double, and char, which are not objects, and it supports static methods and variables."
+    "answer": "Java is not a pure object-oriented language because:\n\n- **Primitive data types**: It supports primitive data types (`int`, `double`, `char`) which are not objects\n- **Static methods and variables**: These features break the pure object-oriented paradigm where everything should be an object\n- **Procedural programming**: You can write procedural code without creating objects"
+  },
+  {
+    "main-topic": "Java",
+    "topic": "Definition",
+    "object": "Overriding",
+    "answer": "**Overriding** is a feature that allows a subclass to provide a specific implementation of a method that is already defined in its superclass.\n\n**Key points:**\n- The method in the subclass must have the same signature (name and parameters) as the superclass method\n- The return type must be the same or a covariant type\n- It's an example of **dynamic polymorphism**, resolved at runtime\n\n**Use cases:**\n- When you want a subclass to provide a specific implementation of a method defined in the superclass\n- When you need to modify the behavior of an inherited method"
+  },
+  {
+    "main-topic": "Java",
+    "topic": "Definition",
+    "object": "Overloading",
+    "answer": "**Overloading** is a feature that allows multiple methods to share the same name within the same class but differ in parameters.\n\n**Key points:**\n- Methods must differ in parameters (number, type, or order)\n- Return type is not part of the method signature\n- It's a form of **static polymorphism**, resolved at compile-time\n\n**Use cases:**\n- When you want to perform similar operations with different input options\n- When you need to provide multiple ways to initialize an object"
+  },
+  {
+    "main-topic": "Java",
+    "topic": "Definition",
+    "object": "Overloading vs Overriding",
+    "answer": "**Key differences:**\n- **Overloading** occurs within the same class\n- **Overriding** occurs in subclasses\n- You can overload a method from the superclass with a different signature\n- You cannot overload and override the same method in the same class\n- **Overriding** is about changing behavior, while **overloading** is about providing different ways to call a method"
+  },
+  {
+    "main-topic": "Java",
+    "topic": "Definition",
+    "object": "Best practices for overloading and overriding in terms of code quality and maintainability",
+    "answer": "**Best practices for code quality and maintainability:**\n\n**Overloading:**\n- Use when variants clearly serve different needs\n- Limit overloading to cases where it adds real flexibility\n- Avoid overloading that reduces code readability\n- Good for different versions of constructors\n\n**Overriding:**\n- Use for specializing behaviors within a class hierarchy\n- Be cautious in complex inheritance structures\n- Avoid unexpected behaviors in subclasses\n- Ensure clear and maintainable code structure"
+  },
+  {
+    "main-topic": "Java",
+    "topic": "Definition",
+    "object": "Polymorphism",
+    "answer": "**Polymorphism** is a core concept in Java that allows a single method, class, or interface to operate in different ways based on the context.\n\n**Types of Polymorphism:**\n\n**1. Compile-time (Static) Polymorphism:**\n- Achieved through method overloading\n- Multiple methods with same name but different parameters\n- Method to be called is determined at compile-time\n\n**2. Runtime (Dynamic) Polymorphism:**\n- Achieved through method overriding\n- Subclass provides specific implementation of superclass method\n- Method to be executed is determined at runtime\n- Based on actual object type, not reference type"
+  },
+  {
+    "main-topic": "Java",
+    "topic": "Definition",
+    "object": "Encapsulation",
+    "answer": "**Encapsulation** is a fundamental OOP concept that restricts direct access to an object's internal state.\n\n**Implementation:**\n- Declare class fields as private\n- Provide public getter and setter methods\n- Control how fields are accessed and modified\n\n**Key Purposes:**\n- **Data protection**\n- **Controlled Access**\n- **Increased Flexibility and Maintainability**\n- **Improved Readability**"
+  },
+  {
+    "main-topic": "Java",
+    "topic": "Definition",
+    "object": "When is it appropriate to declare a Java method as synchronized?",
+    "answer": "A method should be declared as **synchronized** when:\n\n- Operating on shared resources accessed by multiple threads\n- Ensuring mutual exclusion is required\n- Preventing race conditions\n\n**Typical scenarios:**\n- Modifying shared variables or data structures\n- Performing operations that require specific sequence\n- When thread safety is critical\n- When data consistency must be maintained"
+  },
+  {
+    "main-topic": "Java",
+    "topic": "Definition",
+    "object": "Would you declare any method of a singleton factory as synchronized?",
+    "answer": "**Yes**, synchronization is often appropriate in a singleton factory, particularly for:\n\n- Creating or initializing the singleton instance\n- Preventing multiple instance creation\n- Ensuring thread safety during instance creation\n\n**This is necessary because:**\n- Multiple threads might try to access the factory method simultaneously\n- Without proper synchronization, multiple instances could be created\n- The singleton pattern's main goal is to ensure only one instance exists"
+  },
+  {
+    "main-topic": "Java",
+    "topic": "Definition",
+    "object": "What are the risks of improper use of the synchronized clause?",
+    "answer": "Improper use of synchronized can lead to several issues:\n\n**1. Deadlock:**\n- Occurs when threads wait for each other to release locks\n- Caused by poor lock acquisition ordering\n- Results in complete system standstill\n\n**2. Performance Bottlenecks:**\n- Excessive locking can slow down execution\n- Threads may wait unnecessarily\n- Reduced system throughput\n\n**3. Reduced Concurrency:**\n- Unnecessary synchronization restricts parallel execution\n- Limits multi-threading benefits\n- Serializes execution unnecessarily\n\n**4. Starvation:**\n- Some threads may experience prolonged wait times\n- Higher-priority threads may monopolize resources\n- Can lead to system imbalance"
+  },
+  {
+    "main-topic": "Java",
+    "topic": "Definition",
+    "object": "What are the appropriate uses of abstract classes and interfaces in Java?",
+    "answer": "**Appropriate uses of abstract classes and interfaces in Java:**\n\n**Abstract Classes:**\n- When you want to share code among several related classes\n- When you have some common implementation that subclasses will inherit\n- When you want to declare non-public members\n- When you need to define constructors\n- When you want to provide a base implementation that can be extended\n\n**Interfaces:**\n- When you want to define a contract that multiple unrelated classes can implement\n- When you want to specify the behavior of a particular data type\n- When you want to separate the definition of a service from its implementation\n- When you want to achieve multiple inheritance\n- When you want to define a common API for a group of classes\n\n**Best Practices:**\n- Use interfaces for defining behavior\n- Use abstract classes for sharing code\n- Prefer interfaces over abstract classes when possible\n- Use abstract classes when you need to maintain state"
   },
   {
     "main-topic": "Java",
     "topic": "Thread",
-    "object": "What is a thread in Java?",
-    "answer": "A thread in Java is a lightweight process that allows concurrent execution of two or more parts of a program for maximum utilization of CPU. Each thread is a separate path of execution within a program."
+    "object": "What are threads in Java?",
+    "answer": "**Threads** in Java are subprocesses that:\n\n- Use shared memory but act independently\n- Can handle exceptions without affecting other threads\n- Represent single program execution\n- Support multithreading for parallel tasks\n\n**Benefits:**\n- Improved program efficiency\n- Better resource utilization\n- Parallel task execution\n- Independent exception handling"
+  },
+  {
+    "main-topic": "Java",
+    "topic": "Thread",
+    "object": "Describe the life cycle of the thread",
+    "answer": "**Thread Life Cycle States:**\n\n**1. New:**\n- Thread is created but not started\n- Ready to begin execution\n\n**2. Runnable:**\n- Thread is running or ready to run\n- Waiting for CPU allocation\n\n**3. Blocked:**\n- Thread is temporarily suspended\n- Waiting for resource or event\n\n**4. Waiting:**\n- Thread is waiting for another thread\n- Waiting for specific time period\n\n**5. Terminated:**\n- Thread has completed its task\n- Has been terminated by another thread"
+  },
+  {
+    "main-topic": "Java",
+    "topic": "Definition",
+    "object": "Exception Runtime vs Compile Time",
+    "answer": "Java Exceptions are categorized into two types:\n\n**Runtime Exceptions (Unchecked):**\n- Occur during program execution\n- Examples: `NullPointerException`, `ArrayIndexOutOfBoundsException`\n- Not required to be handled explicitly\n- Extend `RuntimeException`\n\n**Compile Time Exceptions (Checked):**\n- Detected by compiler\n- Must be handled explicitly\n- Can be handled using:\n  - try-catch blocks\n  - throws declaration\n- Extend `Exception` class"
+  },
+  {
+    "main-topic": "Java",
+    "topic": "Distributed transactions",
+    "object": "What are distributed transactions?",
+    "answer": "**Distributed transactions** are operations that maintain consistency across multiple services or databases.\n\n**Key Characteristics:**\n- Operations span multiple data repositories\n- Can involve multiple nodes in a network\n- Follows ACID principles:\n  - **Atomicity**\n  - **Consistency**\n  - **Isolation**\n  - **Durability**\n\n**Implementation Methods:**\n- Two-Phase Commit (2PC) protocol\n- Saga Pattern\n\n**Possible Outcomes:**\n1. All operations complete successfully\n2. No operations are performed (in case of failure)"
+  },
+  {
+    "main-topic": "Java",
+    "topic": "Definition",
+    "object": "What is garbage collection?",
+    "answer": "**Garbage collection** is the process by which Java automatically manages memory by reclaiming memory occupied by objects that are no longer reachable or needed by the program.\n\n**Key Features:**\n- Automatic memory management\n- Prevents memory leaks\n- Improves application performance\n- Runs in background\n- Uses various algorithms for optimization"
+  },
+  {
+    "main-topic": "Java",
+    "topic": "Definition",
+    "object": "What is an interface?",
+    "answer": "An **interface** in Java is a reference type that defines a contract for classes to implement.\n\n**Key Features:**\n- Can contain abstract methods (without body) and constants\n- A class can implement multiple interfaces\n- Supports multiple inheritance\n- All methods are implicitly public and abstract\n- All variables are implicitly public, static, and final\n- Provides a way to achieve abstraction and loose coupling"
+  },
+  {
+    "main-topic": "Java",
+    "topic": "Definition",
+    "object": "What is an abstract class?",
+    "answer": "An **abstract class** in Java is a class that cannot be instantiated directly and may contain both abstract and concrete methods.\n\n**Key Features:**\n- Cannot be instantiated with `new` keyword\n- Can contain both abstract methods (without implementation) and concrete methods (with implementation)\n- Can have constructors, instance variables, and static methods\n- Subclasses must implement all abstract methods\n- Used to provide a common base for related classes\n- Supports single inheritance only"
+  },
+  {
+    "main-topic": "Java",
+    "topic": "Collections",
+    "object": "Distinguish between Hashtable and HashMap",
+    "answer": "**HashMap vs Hashtable:**\n\n| Feature | HashMap | Hashtable |\n|---------|---------|----------|\n| **Synchronization** | Not synchronized, not thread safe | Synchronized and thread safe |\n| **Null values** | Allows one null key and any number of null values | Does not allow null keys or values |\n| **Performance** | Faster in single thread applications | Slower due to synchronization |\n| **Inheritance** | Extends AbstractMap class | Extends Dictionary class |\n| **Iteration** | Fail-fast iterator | Enumerator is not fail-fast |\n| **Introduction** | Introduced in Java 1.2 | Present since Java 1.0 |"
+  },
+  {
+    "main-topic": "Javascript",
+    "topic": "Definition",
+    "object": "What is the difference between null and undefined?",
+    "answer": "**null vs undefined:**\n\n**undefined:**\n- Variable declared but not assigned\n- Function parameter not provided\n- Object property doesn't exist\n- Type is 'undefined'\n- Default value for uninitialized variables\n\n**null:**\n- Explicitly assigned value\n- Represents intentional absence of value\n- Type is 'object' (this is a known JavaScript quirk)\n- Must be assigned deliberately\n\n**Key Differences:**\n- `null` is intentional, `undefined` is default\n- Different types when checked with `typeof`\n- Both are falsy values\n- Use `===` for precise comparison\n\n**Best Practices:**\n- Use `null` for intentional absence\n- Check for both in conditional statements"
+  },
+  {
+    "main-topic": "Javascript",
+    "topic": "Definition",
+    "object": "What is the difference between call, apply and bind?",
+    "answer": "**Function Methods for Context Binding:**\n\n**1. call():**\n- Invokes function immediately\n- Takes arguments separately\n- Sets 'this' context\n- Syntax: `func.call(thisArg, arg1, arg2, ...)`\n\n**2. apply():**\n- Invokes function immediately\n- Takes arguments as array\n- Sets 'this' context\n- Syntax: `func.apply(thisArg, [arg1, arg2, ...])`\n\n**3. bind():**\n- Returns new function\n- Preserves 'this' context\n- Can be called later\n- Syntax: `func.bind(thisArg, arg1, arg2, ...)`\n\n**Example:**\n```javascript\nconst person = { name: 'John' };\nfunction greet(greeting, punctuation) {\n  console.log(greeting + ', ' + this.name + punctuation);\n}\n\ngreet.call(person, 'Hello', '!');\ngreet.apply(person, ['Hello', '!']);\nconst boundGreet = greet.bind(person, 'Hello');\nboundGreet('!'); // Can be called later\n```"
+  },
+  {
+    "main-topic": "Javascript",
+    "topic": "Definition",
+    "object": "What is the difference between map, filter and reduce?",
+    "answer": "**Array Methods:**\n\n**1. map():**\n- **Purpose**: Transforms each element\n- **Returns**: New array with same length\n- **Use case**: Data transformation\n- **Example**: Convert numbers to strings\n\n**2. filter():**\n- **Purpose**: Selects elements based on condition\n- **Returns**: New array with length ≤ original\n- **Use case**: Data filtering\n- **Example**: Get even numbers from array\n\n**3. reduce():**\n- **Purpose**: Accumulates values into single result\n- **Returns**: Single value (any type)\n- **Use case**: Data aggregation\n- **Example**: Sum all numbers in array\n\n**Example:**\n```javascript\nconst numbers = [1, 2, 3, 4, 5];\n\n// Transform each number (multiply by 2)\nconst doubled = numbers.map(x => x * 2); // [2, 4, 6, 8, 10]\n\n// Filter even numbers\nconst even = numbers.filter(x => x % 2 === 0); // [2, 4]\n\n// Reduce to sum\nconst sum = numbers.reduce((acc, curr) => acc + curr, 0); // 15\n```"
+  },
+  {
+    "main-topic": "Javascript",
+    "topic": "Definition",
+    "object": "What is the difference between let and const?",
+    "answer": "**let vs const:**\n\n**let:**\n- **Scope**: Block-scoped\n- **Reassignment**: Can be reassigned\n- **Redeclaration**: Cannot be redeclared in same scope\n- **Hoisting**: Hoisted but in Temporal Dead Zone\n- **Initialization**: Can be declared without initialization\n\n**const:**\n- **Scope**: Block-scoped\n- **Reassignment**: Cannot be reassigned\n- **Redeclaration**: Cannot be redeclared in same scope\n- **Hoisting**: Hoisted but in Temporal Dead Zone\n- **Initialization**: Must be initialized at declaration\n\n**Key Differences:**\n- `const` prevents reassignment of the variable reference\n- For objects/arrays, `const` allows mutation of contents\n- Both have block scope (unlike `var`)\n- Both prevent redeclaration\n\n**Best Practices:**\n- Use `const` by default\n- Use `let` when reassignment is needed\n- Avoid `var` completely in modern JavaScript"
+  },
+  {
+    "main-topic": "Javascript",
+    "topic": "Definition",
+    "object": "What is the difference between function declaration and function expression?",
+    "answer": "**Function Declaration vs Expression:**\n\n**Function Declaration:**\n- **Hoisting**: Fully hoisted to top of scope\n- **Calling**: Can be called before declaration\n- **Syntax**: Starts with 'function' keyword\n- **Naming**: Must have a name\n- **Example**: `function greet() { return 'Hello'; }`\n\n**Function Expression:**\n- **Hoisting**: Not hoisted (variable is hoisted, but not the function)\n- **Calling**: Must be defined before use\n- **Syntax**: Function assigned to variable\n- **Naming**: Can be anonymous or named\n- **Example**: `const greet = function() { return 'Hello'; };`\n\n**Arrow Function Expression:**\n- **Syntax**: `const greet = () => 'Hello';`\n- **this binding**: Lexical this binding\n- **Hoisting**: Not hoisted\n\n**Best Practices:**\n- Use declarations for main functions that need hoisting\n- Use expressions for callbacks and when you want to control when the function is created\n- Consider hoisting behavior in your code structure"
+  },
+  {
+    "main-topic": "Javascript",
+    "topic": "Definition",
+    "object": "What is the difference between synchronous and asynchronous code?",
+    "answer": "**Synchronous vs Asynchronous Code:**\n\n**Synchronous Code:**\n- **Execution**: Line by line, sequential\n- **Blocking**: Blocks until completion\n- **Flow**: Predictable, linear flow\n- **Understanding**: Simpler to understand and debug\n- **Performance**: Can be slower for I/O operations\n\n**Asynchronous Code:**\n- **Execution**: Non-blocking, parallel\n- **Blocking**: Continues while waiting for operations\n- **Flow**: Uses callbacks, promises, async/await\n- **Understanding**: More complex but better performance\n- **Performance**: Better for I/O operations\n\n**Key Differences:**\n- **Execution order**: Sync is predictable, async can vary\n- **Blocking behavior**: Sync blocks, async doesn't\n- **Error handling**: Different patterns needed\n- **Code complexity**: Async requires more careful handling\n\n**Use Cases:**\n- **Synchronous**: Simple calculations, file system operations in scripts\n- **Asynchronous**: Network requests, user interactions, timers, database operations"
+  },
+  {
+    "main-topic": "Javascript",
+    "topic": "Definition",
+    "object": "What is the difference between setTimeout and setInterval?",
+    "answer": "**Timing Functions:**\n\n**setTimeout():**\n- **Execution**: Runs once after specified delay\n- **Purpose**: One-time delayed execution\n- **Returns**: Timeout ID for cancellation\n- **Clearing**: Use `clearTimeout(id)`\n\n**setInterval():**\n- **Execution**: Runs repeatedly at specified intervals\n- **Purpose**: Repeated execution\n- **Returns**: Interval ID for cancellation\n- **Clearing**: Use `clearInterval(id)`\n\n**Example:**\n```javascript\n// One-time execution after 1 second\nconst timeoutId = setTimeout(() => {\n  console.log('This runs once after 1 second');\n}, 1000);\n\n// Repeated execution every 1 second\nconst intervalId = setInterval(() => {\n  console.log('This runs every second');\n}, 1000);\n\n// Clear timers\nclearTimeout(timeoutId);\nclearInterval(intervalId);\n```\n\n**Best Practices:**\n- Always clear intervals when no longer needed\n- Use setTimeout for one-time delayed actions\n- Use setInterval for periodic tasks\n- Consider performance impact of frequent intervals\n- Be aware that intervals may not run exactly on time due to JavaScript's single-threaded nature"
+  },
+  {
+    "main-topic": "Javascript",
+    "topic": "Definition",
+    "object": "What is a polyfill?",
+    "answer": "**JavaScript Polyfills:**\n\n**Definition:**\n- Code that implements modern features in older browsers\n- Provides backward compatibility for newer JavaScript features\n- \"Fills the gaps\" in browser support\n- Allows you to use modern APIs in legacy environments\n\n**Key Characteristics:**\n- **Backward compatibility**: Makes new features work in old browsers\n- **Feature detection**: Checks if feature exists before adding polyfill\n- **Graceful degradation**: Provides fallback functionality\n- **Conditional loading**: Only loads when needed\n\n**Common Use Cases:**\n- Array methods (`map`, `filter`, `reduce`, `find`)\n- Promise implementation for older browsers\n- Object methods (`Object.assign`, `Object.keys`)\n- String methods (`includes`, `startsWith`, `endsWith`)\n- ES6+ features in older environments\n\n**Example:**\n```javascript\n// Polyfill for Array.includes()\nif (!Array.prototype.includes) {\n  Array.prototype.includes = function(searchElement) {\n    return this.indexOf(searchElement) !== -1;\n  };\n}\n```\n\n**Best Practices:**\n- Check browser support before applying polyfill\n- Use feature detection rather than browser detection\n- Load polyfills conditionally to reduce bundle size\n- Keep polyfills updated\n- Consider using services like Polyfill.io for automatic polyfill serving"
+  },
+  {
+    "main-topic": "Javascript",
+    "topic": "Definition",
+    "object": "What is Hoisting?",
+    "answer": "**JavaScript Hoisting:**\n\n**Definition:**\n- Behavior where variable and function declarations are moved to the top of their scope\n- Occurs during the memory creation phase of execution context\n- Allows using variables and functions before their declaration in code\n\n**Types of Hoisting:**\n\n**1. Variable Hoisting:**\n- **var**: Declarations are hoisted, initialized with `undefined`\n- **let/const**: Hoisted but not initialized (Temporal Dead Zone)\n- **Assignments**: Not hoisted, only declarations\n\n**2. Function Hoisting:**\n- **Function declarations**: Fully hoisted (can be called before declaration)\n- **Function expressions**: Not hoisted\n- **Arrow functions**: Not hoisted\n\n**Examples:**\n```javascript\n// This works due to hoisting\nconsole.log(x); // undefined (not error)\nvar x = 5;\n\n// This throws ReferenceError\nconsole.log(y); // ReferenceError\nlet y = 10;\n\n// Function declaration - works\nsayHello(); // \"Hello!\"\nfunction sayHello() {\n  console.log(\"Hello!\");\n}\n\n// Function expression - doesn't work\nsayGoodbye(); // TypeError\nvar sayGoodbye = function() {\n  console.log(\"Goodbye!\");\n};\n```\n\n**Key Points:**\n- Only declarations are hoisted, not initializations\n- Temporal Dead Zone exists for `let` and `const`\n- Best practice: declare variables and functions before using them"
+  },
+  {
+    "main-topic": "Javascript",
+    "topic": "Definition",
+    "object": "What is type coercion in JavaScript?",
+    "answer": "**JavaScript Type Coercion:**\n\n**Definition:**\n- Automatic or explicit conversion between different data types\n- Occurs during operations when types don't match\n- Can be predictable or unpredictable depending on the operation\n\n**Types of Coercion:**\n\n**1. Implicit Coercion (Automatic):**\n- JavaScript automatically converts types\n- Happens during operations like `+`, `==`, conditionals\n- Can be unpredictable and cause bugs\n\n**2. Explicit Coercion (Manual):**\n- Developer manually converts types\n- Using functions like `String()`, `Number()`, `Boolean()`\n- More predictable and recommended\n\n**Common Examples:**\n```javascript\n// Implicit coercion\n'5' + 3        // '53' (number to string)\n'5' - 3        // 2 (string to number)\n'5' == 5       // true (loose equality)\n!!'hello'      // true (string to boolean)\n\n// Explicit coercion\nString(123)    // '123'\nNumber('456')  // 456\nBoolean('')    // false\nparseInt('10px') // 10\n```\n\n**Conversion Rules:**\n- **To String**: Most values become their string representation\n- **To Number**: Strings with numbers become numbers, others become NaN\n- **To Boolean**: Falsy values (`0`, `''`, `null`, `undefined`, `NaN`, `false`) become `false`\n\n**Best Practices:**\n- Use explicit conversion for clarity\n- Use strict equality (`===`) instead of loose equality (`==`)\n- Be aware of implicit coercion rules\n- Test edge cases thoroughly"
+  },
+  {
+    "main-topic": "Javascript",
+    "topic": "Definition",
+    "object": "Why is 'this' operator inconsistent in JavaScript?",
+    "answer": "The **'this'** operator in JavaScript can be inconsistent because:\n\n**Context-Dependent Binding:**\n- Value determined by **how** the function is called, not **where** it's declared\n- Same function can have different `this` values in different calling contexts\n\n**Multiple Binding Rules:**\n1. **Global context**: `this` refers to global object (window in browsers)\n2. **Object method**: `this` refers to the object\n3. **Constructor**: `this` refers to new instance\n4. **Event handler**: `this` refers to the element\n5. **Arrow functions**: `this` is lexically inherited\n\n**Examples of Inconsistency:**\n```javascript\nconst obj = {\n  name: 'Object',\n  regularMethod: function() {\n    console.log(this.name); // 'Object'\n    \n    setTimeout(function() {\n      console.log(this.name); // undefined (global context)\n    }, 100);\n  },\n  arrowMethod: () => {\n    console.log(this.name); // undefined (lexical this)\n  }\n};\n```\n\n**Dynamic Nature:**\n- `call()`, `apply()`, and `bind()` can change `this` value\n- Event listeners assign `this` to the element\n- Strict mode affects `this` behavior\n\n**Solutions:**\n- Use arrow functions for lexical `this`\n- Use `bind()` to explicitly set `this`\n- Store `this` in a variable (`const self = this`)\n- Use explicit context passing"
+  },
+  {
+    "main-topic": "Javascript",
+    "topic": "Definition",
+    "object": "How would you debounce a function in JavaScript?",
+    "answer": "**Debouncing in JavaScript:**\n\n**Definition:**\n- Technique to limit function execution frequency\n- Delays function execution until after a pause in calls\n- Executes only once after the specified delay period\n- Useful for performance optimization\n\n**Implementation:**\n```javascript\nfunction debounce(func, delay) {\n  let timeoutId;\n  \n  return function(...args) {\n    // Clear previous timeout\n    clearTimeout(timeoutId);\n    \n    // Set new timeout\n    timeoutId = setTimeout(() => {\n      func.apply(this, args);\n    }, delay);\n  };\n}\n\n// Usage example\nconst searchHandler = debounce((query) => {\n  console.log('Searching for:', query);\n  // API call here\n}, 300);\n\n// This will only execute once, 300ms after the last call\nsearchHandler('a');\nsearchHandler('ab');\nsearchHandler('abc'); // Only this will execute\n```\n\n**Advanced Implementation with Immediate Execution:**\n```javascript\nfunction debounce(func, delay, immediate = false) {\n  let timeoutId;\n  \n  return function(...args) {\n    const callNow = immediate && !timeoutId;\n    \n    clearTimeout(timeoutId);\n    \n    timeoutId = setTimeout(() => {\n      timeoutId = null;\n      if (!immediate) func.apply(this, args);\n    }, delay);\n    \n    if (callNow) func.apply(this, args);\n  };\n}\n```\n\n**Use Cases:**\n- **Search input**: Delay API calls until user stops typing\n- **Window resize**: Limit resize event handlers\n- **Scroll events**: Reduce scroll event frequency\n- **Button clicks**: Prevent rapid multiple submissions\n- **Form validation**: Delay validation until user pauses\n\n**Benefits:**\n- Reduces unnecessary function calls\n- Improves performance\n- Prevents API spam\n- Better user experience\n- Reduces server load"
+  },
+  {
+    "main-topic": "Javascript",
+    "topic": "Definition",
+    "object": "What are JavaScript generators?",
+    "answer": "**JavaScript Generators:**\n\n**Definition:**\n- Special functions that can pause and resume execution\n- Return multiple values over time using `yield` keyword\n- Use `function*` syntax to declare\n- Return an iterator object when called\n\n**Key Features:**\n\n**1. Pause and Resume:**\n- Can pause execution at any `yield` point\n- Maintain state between yields\n- Resume execution from where it left off\n- Control flow externally via `.next()` method\n\n**2. Lazy Evaluation:**\n- Values are generated on-demand\n- Memory efficient for large sequences\n- Can represent infinite sequences\n\n**Basic Example:**\n```javascript\nfunction* numberGenerator() {\n  console.log('Starting generator');\n  yield 1;\n  console.log('After first yield');\n  yield 2;\n  console.log('After second yield');\n  yield 3;\n  console.log('Generator finished');\n}\n\nconst gen = numberGenerator();\nconsole.log(gen.next()); // { value: 1, done: false }\nconsole.log(gen.next()); // { value: 2, done: false }\nconsole.log(gen.next()); // { value: 3, done: false }\nconsole.log(gen.next()); // { value: undefined, done: true }\n```\n\n**Advanced Example - Infinite Sequence:**\n```javascript\nfunction* fibonacci() {\n  let a = 0, b = 1;\n  while (true) {\n    yield a;\n    [a, b] = [b, a + b];\n  }\n}\n\nconst fib = fibonacci();\nconsole.log(fib.next().value); // 0\nconsole.log(fib.next().value); // 1\nconsole.log(fib.next().value); // 1\nconsole.log(fib.next().value); // 2\n```\n\n  "},
+  {
+    "main-topic": "Javascript",
+    "topic": "Definition",
+    "object": "Difference between process.nextTick and setImmediate",
+    "answer": "**process.nextTick() vs setImmediate() in Node.js:**\n\n**process.nextTick():**\n- **Execution timing**: Immediately after current operation completes\n- **Priority**: Highest priority in event loop\n- **Queue**: Runs before I/O events, timers, and setImmediate\n- **Risk**: Can cause I/O starvation if overused\n- **Use case**: Critical operations that must run before anything else\n\n**setImmediate():**\n- **Execution timing**: After current event loop phase completes\n- **Priority**: Lower priority than process.nextTick\n- **Queue**: Runs after I/O events in the check phase\n- **Risk**: Less likely to cause starvation\n- **Use case**: Operations that should run after I/O events\n\n**Execution Order:**\n```javascript\nconsole.log('Start');\n\nsetImmediate(() => console.log('setImmediate'));\nprocess.nextTick(() => console.log('nextTick'));\n\nconsole.log('End');\n\n// Output:\n// Start\n// End\n// nextTick\n// setImmediate\n```\n\n**Event Loop Phases:**\n1. **Timer phase**: setTimeout, setInterval\n2. **I/O callbacks**: Most callbacks\n3. **Idle, prepare**: Internal use\n4. **Poll phase**: Fetch new I/O events\n5. **Check phase**: setImmediate callbacks\n6. **Close callbacks**: Socket close events\n\n**process.nextTick runs between each phase**\n\n**Best Practices:**\n- Use `process.nextTick()` sparingly for urgent tasks\n- Prefer `setImmediate()` for general async operations\n- Avoid recursive `process.nextTick()` calls\n- Consider `setImmediate()` for better I/O performance"
+  },
+  {
+    "main-topic": "Javascript",
+    "topic": "Definition",
+    "object": "What are closures in JavaScript?",
+    "answer": "**Closures in JavaScript:**\n\n**Definition:**\n- A function that has access to variables in its outer (enclosing) scope even after the outer function has returned\n- Combination of a function and the lexical environment in which it was declared\n- Preserves data privacy and state between function calls\n\n**Key Features:**\n\n**1. Scope Access:**\n- Inner function can access outer function's variables\n- Variables remain in memory even after outer function completes\n- Creates private variables that can't be accessed directly\n\n**2. Data Persistence:**\n- Maintains state between function calls\n- Each closure instance has its own copy of variables\n- Variables persist as long as the closure exists\n\n**Basic Example:**\n```javascript\nfunction createCounter() {\n  let count = 0; // Private variable\n  \n  return function() {\n    count++; // Access to outer scope\n    return count;\n  };\n}\n\nconst counter1 = createCounter();\nconst counter2 = createCounter();\n\nconsole.log(counter1()); // 1\nconsole.log(counter1()); // 2\nconsole.log(counter2()); // 1 (separate instance)\n```\n\n**Advanced Example - Module Pattern:**\n```javascript\nfunction createCalculator() {\n  let result = 0;\n  \n  return {\n    add: function(x) {\n      result += x;\n      return this;\n    },\n    multiply: function(x) {\n      result *= x;\n      return this;\n    },\n    getResult: function() {\n      return result;\n    },\n    reset: function() {\n      result = 0;\n      return this;\n    }\n  };\n}\n\nconst calc = createCalculator();\ncalc.add(5).multiply(2).add(3);\nconsole.log(calc.getResult()); // 13\n```\n\n**Use Cases:**\n- **Data privacy**: Creating private variables\n- **Function factories**: Creating specialized functions\n- **Event handlers**: Maintaining state in callbacks\n- **Module patterns**: Encapsulating functionality\n- **Currying**: Creating partially applied functions\n- **Memoization**: Caching function results\n\n**Benefits:**\n- Data encapsulation and privacy\n- State persistence\n- Avoiding global variables\n- Creating reusable, configurable functions"
+  },
+  {
+    "main-topic": "Angular",
+    "topic": "Definition",
+    "object": "What is meant by scope in AngularJS? Also, define the different types.",
+    "answer": "**AngularJS Scope:**\n\n**Definition:**\n- Binding object between HTML view and JavaScript controller\n- Contains application data and methods\n- Provides context for expressions in templates\n- Acts as the glue between controller and view\n\n**Types of Scope:**\n\n**1. $scope:**\n- **Purpose**: Controller-view communication object\n- **Function**: Connects view (DOM) to ViewModel\n- **Access**: Provides functions and data to view\n- **Scope**: Limited to specific controller\n- **Usage**: Local data binding and methods\n\n**2. $rootScope:**\n- **Purpose**: Application-wide scope object\n- **Function**: Top-most scope in application hierarchy\n- **Access**: Single instance shared by all components\n- **Scope**: Global across entire application\n- **Usage**: Acts as global variable storage\n\n**Key Features:**\n- **Data binding**: Two-way data synchronization\n- **Event propagation**: $emit (up) and $broadcast (down)\n- **Expression evaluation**: Processes template expressions\n- **Watchers**: Monitor scope variables for changes\n- **Digest cycle**: Automatic change detection and updates\n\n**Scope Hierarchy:**\n```javascript\n// Root scope (top level)\n$rootScope\n  ├── $scope (Controller 1)\n  │   ├── $scope (Child Controller)\n  │   └── $scope (Directive scope)\n  └── $scope (Controller 2)\n      └── $scope (Isolated scope)\n```\n\n**Example Usage:**\n```javascript\n// Controller\nfunction MyController($scope, $rootScope) {\n  // Local scope\n  $scope.message = 'Hello from controller';\n  $scope.updateMessage = function() {\n    $scope.message = 'Updated!';\n  };\n  \n  // Root scope (global)\n  $rootScope.appName = 'My Application';\n}\n```\n\n**Best Practices:**\n- Use $scope for controller-specific data\n- Minimize $rootScope usage\n- Avoid direct scope manipulation in views\n- Use controllerAs syntax in modern applications"
+  },
+  {
+    "main-topic": "Angular",
+    "topic": "Definition",
+    "object": "Briefly explain Directives in Angular",
+    "answer": "**Angular Directives:**\n\n**Definition:**\n- Classes that add additional behavior to elements in Angular applications\n- Extend HTML with custom functionality and dynamic behavior\n- Manipulate the DOM by adding, removing, or modifying elements\n- Core building blocks for creating reusable UI components\n\n**Types of Directives:**\n\n**1. Component Directives:**\n- **Purpose**: Create custom elements with templates\n- **Features**: Have their own view, logic, and styling\n- **Usage**: Building reusable UI components\n- **Example**: `<app-user-card></app-user-card>`\n\n**2. Structural Directives:**\n- **Purpose**: Change DOM layout by adding/removing elements\n- **Syntax**: Prefixed with asterisk (*)\n- **Examples**: `*ngIf`, `*ngFor`, `*ngSwitch`\n- **Function**: Conditionally display or repeat elements\n\n**3. Attribute Directives:**\n- **Purpose**: Change appearance or behavior of existing elements\n- **Usage**: Applied as HTML attributes\n- **Examples**: `ngClass`, `ngStyle`, `ngModel`\n- **Function**: Modify element properties dynamically\n\n**4. Custom Directives:**\n- **Purpose**: Create application-specific functionality\n- **Benefits**: Reusable across application\n- **Implementation**: Extend Angular's capabilities\n- **Usage**: Encapsulate complex DOM manipulation\n\n**Example Usage:**\n```html\n<!-- Component Directive -->\n<app-user-profile [user]=\"currentUser\"></app-user-profile>\n\n<!-- Structural Directives -->\n<div *ngIf=\"isLoggedIn\">Welcome back!</div>\n<li *ngFor=\"let item of items\">{{ item.name }}</li>\n\n<!-- Attribute Directives -->\n<div [ngClass]=\"{'active': isActive, 'disabled': !isEnabled}\">\n<input [(ngModel)]=\"username\" placeholder=\"Username\">\n```\n\n**Benefits:**\n- **Reusability**: Write once, use everywhere\n- **Modularity**: Encapsulate specific functionality\n- **Maintainability**: Easier to test and update\n- **Extensibility**: Extend HTML capabilities"
+  },
+  {
+    "main-topic": "Angular",
+    "topic": "Definition",
+    "object": "Why do we do interpolation in Angular.Js? Briefly explain the ways by which AngularJs extends HTML.",
+    "answer": "**AngularJS Interpolation and HTML Extension:**\n\n**Interpolation Purpose:**\n- **Data binding**: Binds component data to HTML template\n- **Dynamic content**: Displays changing values in real-time\n- **Expression evaluation**: Processes JavaScript-like expressions\n- **Syntax**: Uses double curly braces `{{ expression }}`\n- **Real-time updates**: Automatically updates when data changes\n\n**Example:**\n```html\n<h1>Welcome, {{ user.name }}!</h1>\n<p>Total items: {{ items.length }}</p>\n<div>{{ 2 + 2 }}</div> <!-- Displays: 4 -->\n```\n\n**Ways AngularJS Extends HTML:**\n\n**1. Directives:**\n- **Custom elements**: Create new HTML tags\n- **Attribute extensions**: Add behavior to existing elements\n- **Structural changes**: Modify DOM structure\n- **Examples**: `<my-component>`, `ng-repeat`, `ng-if`\n\n**2. Expressions:**\n- **JavaScript-like syntax**: Evaluate expressions in templates\n- **Data binding**: Connect model to view\n- **Simple calculations**: Perform basic operations\n- **Examples**: `{{ name }}`, `{{ price * quantity }}`\n\n**3. Filters:**\n- **Data formatting**: Transform display output\n- **Pipeline syntax**: Chain multiple transformations\n- **Built-in filters**: currency, date, uppercase, etc.\n- **Example**: `{{ price | currency }}`, `{{ name | uppercase }}`\n\n**4. Two-way Data Binding:**\n- **ng-model directive**: Synchronizes model and view\n- **Automatic updates**: Changes reflect immediately\n- **Form handling**: Seamless form input management\n- **Example**: `<input ng-model=\"username\">`\n\n**5. Event Handling:**\n- **Event directives**: Handle user interactions\n- **Method binding**: Connect events to controller methods\n- **Examples**: `ng-click`, `ng-change`, `ng-submit`\n- **Usage**: `<button ng-click=\"saveData()\">Save</button>`\n\n**6. Conditional Rendering:**\n- **ng-if**: Show/hide elements based on conditions\n- **ng-show/ng-hide**: Control visibility\n- **ng-switch**: Multiple conditional display\n\n**7. Iteration:**\n- **ng-repeat**: Loop through collections\n- **Dynamic lists**: Generate HTML for arrays/objects\n- **Example**: `<li ng-repeat=\"item in items\">{{ item.name }}</li>`\n\n**Benefits of Extensions:**\n- **Declarative programming**: Describe what you want, not how\n- **Reduced JavaScript**: Less DOM manipulation code\n- **Maintainable**: Easier to read and understand\n- **Reusable**: Components can be used multiple times"
+  },
+  {
+    "main-topic": "Angular",
+    "topic": "Definition",
+    "object": "What is the concept of routing in Angular.Js?",
+    "answer": "**Routing in AngularJS:**\n\n**Definition:**\nRouting in AngularJS refers to the mechanism that allows users to navigate between different views/pages in a single-page application (SPA) without reloading the entire page.\n\n**Key Concepts:**\n\n**1. Single-Page Application Navigation:**\n- **Purpose**: Switch between various web pages/views\n- **Method**: Uses URL changes without full page reload\n- **Benefits**: Faster navigation, better user experience\n- **Implementation**: Updates only specific portions of the page\n\n**2. ngRoute Module:**\n- **Requirement**: Must be included as dependency\n- **Function**: Provides routing functionality\n- **Components**: Route configuration, view templates, controllers\n- **Installation**: Separate module that needs to be injected\n\n**3. URL Management:**\n- **Different URLs**: Each view has its own URL\n- **Browser history**: Maintains navigation history\n- **Bookmarkable**: Users can bookmark specific views\n- **Deep linking**: Direct access to specific application states\n\n**Basic Setup:**\n```javascript\n// Include ngRoute as dependency\nangular.module('myApp', ['ngRoute'])\n.config(function($routeProvider) {\n  $routeProvider\n    .when('/', {\n      templateUrl: 'views/home.html',\n      controller: 'HomeController'\n    })\n    .when('/about', {\n      templateUrl: 'views/about.html',\n      controller: 'AboutController'\n    })\n    .when('/contact', {\n      templateUrl: 'views/contact.html',\n      controller: 'ContactController'\n    })\n    .otherwise({\n      redirectTo: '/'\n    });\n});\n```\n\n**HTML Template:**\n```html\n<div ng-app=\"myApp\">\n  <nav>\n    <a href=\"#/\">Home</a>\n    <a href=\"#/about\">About</a>\n    <a href=\"#/contact\">Contact</a>\n  </nav>\n  \n  <!-- Views are loaded here -->\n  <div ng-view></div>\n</div>\n```\n\n**Route Parameters:**\n```javascript\n.when('/user/:id', {\n  templateUrl: 'views/user.html',\n  controller: 'UserController'\n})\n\n// In controller\nfunction UserController($scope, $routeParams) {\n  $scope.userId = $routeParams.id;\n}\n```\n\n  "},
+  {
+    "main-topic": "Node.js",
+    "topic": "Definition",
+    "object": "What is Node.js?",
+    "answer": "**Node.js Overview:**\n\n**Definition:**\nNode.js is a popular runtime environment for executing JavaScript code outside of web browsers, primarily used for back-end development.\n\n**Core Features:**\n\n**1. V8 JavaScript Engine:**\n- **Source**: Uses Google's powerful V8 engine\n- **Performance**: High-performance JavaScript execution\n- **Compilation**: Compiles JavaScript to machine code\n- **Optimization**: Advanced optimization techniques\n\n**2. Single-Threaded Architecture:**\n- **Main thread**: Single-threaded event loop\n- **Non-blocking**: Asynchronous I/O operations\n- **Concurrency**: Handles multiple requests efficiently\n- **Scalability**: Suitable for I/O-intensive applications\n\n**3. Event-Driven Architecture:**\n- **Event loop**: Core mechanism for handling operations\n- **Non-blocking I/O**: Operations don't block the main thread\n- **Event emitters**: Publish-subscribe pattern implementation\n- **Callbacks**: Asynchronous operation handling\n\n**How It Works:**\n\n**Event Loop Process:**\n1. **Event monitoring**: Continuously watches for events\n2. **Event detection**: Identifies incoming requests or I/O completions\n3. **Handler routing**: Routes events to appropriate handlers\n4. **Quick processing**: Handles one event at a time efficiently\n5. **Non-blocking**: Delegates I/O operations to other threads\n\n**Architecture Benefits:**\n- **High concurrency**: Handles thousands of connections\n- **Memory efficiency**: Lower memory footprint\n- **CPU optimization**: Efficient CPU usage for I/O operations\n- **Scalability**: Excellent for real-time applications\n\n**Use Cases:**\n- **Web servers**: RESTful APIs, web applications\n- **Real-time applications**: Chat applications, gaming\n- **Microservices**: Distributed system components\n- **IoT applications**: Device communication\n- **Streaming applications**: Media streaming, data processing\n\n**Advantages:**\n- **JavaScript everywhere**: Same language for frontend and backend\n- **Fast development**: Rapid prototyping and development\n- **Large ecosystem**: NPM package manager with extensive libraries\n- **Active community**: Strong community support\n- **Cross-platform**: Runs on various operating systems"
+  },
+  {
+    "main-topic": "Node.js",
+    "topic": "Definition",
+    "object": "What is the Event Loop in Node.js?",
+    "answer": "**Event Loop in Node.js:**\n\n**Definition:**\nL'event loop è il meccanismo fondamentale che permette a Node.js di gestire operazioni asincrone in modo efficiente, nonostante JavaScript sia single-threaded.\n\n**Core Functionality:**\n- **Asynchronous programming**: Enables non-blocking operations\n- **Single-threaded simulation**: Makes Node.js behave like multi-threaded\n- **Thread delegation**: Offloads async/I/O operations to other threads\n- **Main thread continuity**: Allows main thread to continue execution\n\n**Event Loop Phases:**\n\n**1. Timer Phase:**\n- **Function**: Executes callbacks scheduled by setTimeout() and setInterval()\n- **Timing**: Callbacks run after their specified delay\n- **Queue**: Timer callback queue\n\n**2. Pending Callbacks Phase:**\n- **Function**: Executes I/O callbacks deferred to the next loop iteration\n- **Content**: Some system operation callbacks\n- **Purpose**: Handle delayed I/O operations\n\n**3. Idle, Prepare Phase:**\n- **Function**: Internal use only\n- **Visibility**: Not accessible to user code\n- **Purpose**: Internal Node.js operations\n\n**4. Poll Phase:**\n- **Function**: Fetch new I/O events and execute I/O callbacks\n- **Behavior**: May block if no other phases have callbacks\n- **Priority**: Most I/O callbacks execute here\n\n**5. Check Phase:**\n- **Function**: Executes setImmediate() callbacks\n- **Timing**: After poll phase completes\n- **Usage**: Preferred for async callback scheduling\n\n**6. Close Callbacks Phase:**\n- **Function**: Executes close event callbacks\n- **Examples**: socket.on('close', callback)\n- **Purpose**: Cleanup operations\n\n**Process Flow:**\n```javascript\n// Example demonstrating event loop phases\nconsole.log('Start'); // Synchronous\n\nsetTimeout(() => console.log('Timer'), 0); // Timer phase\nsetImmediate(() => console.log('Immediate')); // Check phase\nprocess.nextTick(() => console.log('NextTick')); // Between phases\n\nconsole.log('End'); // Synchronous\n\n// Output: Start, End, NextTick, Timer, Immediate\n```\n\n**Key Characteristics:**\n- **Non-blocking**: I/O operations don't halt execution\n- **Event-driven**: Responds to events as they occur\n- **Efficient**: Optimal resource utilization\n- **Scalable**: Handles high concurrency\n\n**Benefits:**\n- **Performance**: Excellent for I/O-intensive applications\n- **Scalability**: Supports thousands of concurrent connections\n- **Responsiveness**: Maintains application responsiveness\n- **Resource efficiency**: Lower memory and CPU usage"
+  },
+  {
+    "main-topic": "Node.js",
+    "topic": "Definition",
+    "object": "Explain the concepts of Buffers and Streams",
+    "answer": "**Buffers and Streams in Node.js:**\n\n**Buffers:**\n\n**Definition:**\n- **Purpose**: Handle raw binary data in Node.js\n- **Location**: Specific memory location for binary operations\n- **Type**: Fixed-size sequence of bytes\n- **Usage**: Low-level data manipulation\n\n**Key Characteristics:**\n- **Binary data only**: Designed specifically for binary data\n- **Fixed size**: Cannot be resized once created\n- **Byte representation**: Each integer represents a byte\n- **Global**: Available globally without requiring\n- **Immutable size**: Size cannot be changed after creation\n\n**Buffer vs Array:**\n| Feature | Buffer | Array |\n|---------|--------|-------|\n| **Data types** | Binary only | Any type |\n| **Size** | Fixed | Resizable |\n| **Memory** | Raw memory | V8 heap |\n| **Performance** | Faster for binary | General purpose |\n\n**Buffer Example:**\n```javascript\n// Creating buffers\nconst buf1 = Buffer.alloc(10); // 10 bytes filled with 0\nconst buf2 = Buffer.from('Hello', 'utf8');\nconst buf3 = Buffer.from([1, 2, 3, 4, 5]);\n\n// Reading buffer\nconsole.log(buf2.toString()); // 'Hello'\nconsole.log(buf2.length); // 5\n```\n\n**Streams:**\n\n**Definition:**\n- **Purpose**: Abstract interface for working with streaming data\n- **Function**: Handle data in chunks rather than loading entirely\n- **Efficiency**: Memory efficient for large data sets\n- **Real-time**: Process data as it becomes available\n\n**Types of Streams:**\n\n**1. Readable Stream:**\n- **Function**: Source of data that can be read\n- **Examples**: File reading, HTTP requests\n- **Methods**: `.read()`, `.pipe()`, `.on('data')`\n\n**2. Writable Stream:**\n- **Function**: Destination where data can be written\n- **Examples**: File writing, HTTP responses\n- **Methods**: `.write()`, `.end()`, `.on('finish')`\n\n**3. Duplex Stream:**\n- **Function**: Both readable and writable\n- **Examples**: TCP sockets, compression\n- **Capability**: Can read and write independently\n\n**4. Transform Stream:**\n- **Function**: Duplex stream that modifies data\n- **Examples**: Compression, encryption, parsing\n- **Process**: Read input, transform, write output\n\n**Stream Example:**\n```javascript\nconst fs = require('fs');\n\n// Reading large file with streams\nconst readStream = fs.createReadStream('largefile.txt');\nconst writeStream = fs.createWriteStream('output.txt');\n\nreadStream.on('data', (chunk) => {\n  console.log(`Received ${chunk.length} bytes`);\n  writeStream.write(chunk);\n});\n\nreadStream.on('end', () => {\n  console.log('File reading completed');\n  writeStream.end();\n});\n\n// Or using pipe (simpler)\nreadStream.pipe(writeStream);\n```\n\n**Benefits:**\n- **Memory efficiency**: Process data in chunks\n- **Performance**: Start processing before all data arrives\n- **Scalability**: Handle large files without memory issues\n- **Real-time**: Live data processing capabilities"
+  },
+  {
+    "main-topic": "Node.js",
+    "topic": "Definition",
+    "object": "How can we use clustering to enhance the performance of Node.Js?",
+    "answer": "**Clustering in Node.js:**\n\n**Definition:**\nClustering is a technique to enhance Node.js application performance by creating multiple worker processes that share the same server port, allowing better utilization of multi-core systems.\n\n**Core Problem:**\n- **Single processor limitation**: Node.js apps run on single processor by default\n- **Multi-core underutilization**: Cannot leverage multi-core machines effectively\n- **Performance bottleneck**: Single event loop limits throughput\n- **Scalability issue**: Limited by single process capabilities\n\n**Clustering Solution:**\n\n**1. Multiple Processes:**\n- **Worker creation**: Launch multiple Node.js processes\n- **Event loop instances**: Each worker has its own event loop\n- **Load distribution**: Distribute incoming requests across workers\n- **Resource sharing**: Share server ports between processes\n\n**2. Cluster Manager:**\n- **Parent process**: Master process manages worker processes\n- **Health monitoring**: Monitors individual worker health\n- **Process management**: Starts, stops, and restarts workers\n- **Load balancing**: Distributes requests among workers\n\n**Implementation Example:**\n```javascript\nconst cluster = require('cluster');\nconst http = require('http');\nconst numCPUs = require('os').cpus().length;\n\nif (cluster.isMaster) {\n  console.log(`Master ${process.pid} is running`);\n  \n  // Fork workers equal to CPU cores\n  for (let i = 0; i < numCPUs; i++) {\n    cluster.fork();\n  }\n  \n  // Handle worker exit\n  cluster.on('exit', (worker, code, signal) => {\n    console.log(`Worker ${worker.process.pid} died`);\n    console.log('Starting a new worker');\n    cluster.fork(); // Restart worker\n  });\n  \n} else {\n  // Worker process\n  http.createServer((req, res) => {\n    res.writeHead(200);\n    res.end(`Hello from worker ${process.pid}\\n`);\n  }).listen(8000);\n  \n  console.log(`Worker ${process.pid} started`);\n}\n```\n\n**Advanced Clustering with PM2:**\n```javascript\n// ecosystem.config.js\nmodule.exports = {\n  apps: [{\n    name: 'my-app',\n    script: './app.js',\n    instances: 'max', // Use all CPU cores\n    exec_mode: 'cluster',\n    env: {\n      NODE_ENV: 'development'\n    },\n    env_production: {\n      NODE_ENV: 'production'\n    }\n  }]\n};\n```\n\n**Load Balancing Strategies:**\n\n**1. Round Robin (Default):**\n- **Method**: Distributes requests in circular order\n- **Fairness**: Equal distribution among workers\n- **Performance**: Good for similar request processing times\n\n**2. Least Connections:**\n- **Method**: Routes to worker with fewest active connections\n- **Efficiency**: Better for varying request processing times\n- **Balance**: Maintains optimal load distribution\n\n**Benefits:**\n\n**1. Performance Improvement:**\n- **CPU utilization**: Uses all available CPU cores\n- **Throughput**: Significantly higher request handling\n- **Concurrency**: More simultaneous connections\n- **Response time**: Reduced response times under load\n\n**2. Reliability:**\n- **Fault tolerance**: If one worker crashes, others continue\n- **Zero downtime**: Can restart workers without stopping service\n- **Health monitoring**: Automatic worker replacement\n\n**3. Scalability:**\n- **Horizontal scaling**: Add more workers as needed\n- **Resource optimization**: Better resource utilization\n- **Flexibility**: Adjust worker count based on load\n\n**Best Practices:**\n- **Worker count**: Usually equal to CPU cores\n- **Shared state**: Avoid shared state between workers\n- **Database connections**: Use connection pooling\n- **Session management**: Use external session store (Redis)\n- **Monitoring**: Implement proper logging and monitoring\n\n**Considerations:**\n- **Memory usage**: Each worker uses separate memory\n- **Shared resources**: Database connections need pooling\n- **Session handling**: Sessions can't be shared between workers\n- **File system**: Be careful with file operations"
+  },
+  {
+    "main-topic": "Node.js",
+    "topic": "Definition",
+    "object": "Define Middleware. Mention all the types of Middleware in Express.Js",
+    "answer": "Middleware is a type handler in Express.Js which is used to access the request-response cycle of the application. It acts as a function which holds the objects of request and response. After the server receives the request and before the controller actions transmit the response, middleware is invoked. \nVarious types of middleware in Express.Js are stated as – \nApplication Level Middleware \nRouter Level Middleware \nError Handling Middleware \nBuilt-in Middleware \nThird-Party Middleware"
+  },
+  {
+    "main-topic": "Node.js",
+    "topic": "Definition",
+    "object": "Explain REPL In NodeJs",
+    "answer": "REPL (Read-Eval-Print Loop) in Node.js:\n\nDefinition:\n- Interactive programming environment\n- Reads user input\n- Evaluates the input\n- Prints the result\n- Loops back to read more input\n\nFeatures:\n- Immediate feedback\n- Command history\n- Tab completion\n- Multi-line input support\n\nUse Cases:\n- Quick code testing\n- Learning JavaScript\n- Debugging\n- Prototyping\n\nExample Usage:\n```javascript\n$ node\n> 2 + 2\n4\n> const x = 10\nundefined\n> x * 2\n20\n```"
+  },
+  {
+    "main-topic": "Node.js",
+    "topic": "Definition",
+    "object": "What Is EventEmitter In NodeJs",
+    "answer": "EventEmitter in Node.js:\n\nDefinition:\n- Core module for event handling\n- Implements the observer pattern\n- Allows objects to communicate asynchronously\n\nKey Features:\n- Event registration\n- Event triggering\n- Event listening\n- Event removal\n\nCommon Methods:\n- on() / addListener()\n- emit()\n- once()\n- removeListener()\n- removeAllListeners()\n\nExample:\n```javascript\nconst EventEmitter = require('events');\nconst myEmitter = new EventEmitter();\n\nmyEmitter.on('event', (data) => {\n  console.log('Event received:', data);\n});\n\nmyEmitter.emit('event', 'Hello World');\n```"
+  },
+  {
+    "main-topic": "Java",
+    "topic": "Definition",
+    "object": "What is garbage collection?",
+    "answer": "Garbage collection is the process by which Java automatically manages memory by reclaiming memory occupied by objects that are no longer reachable or needed by the program."
+  },
+  {
+    "main-topic": "Java",
+    "topic": "Definition",
+    "object": "What is an interface?",
+    "answer": "An interface in Java is a reference type that defines a contract for classes to implement. It can contain abstract methods (without body) and constants. A class can implement multiple interfaces."
+  },
+  {
+    "main-topic": "Java",
+    "topic": "Definition",
+    "object": "What is an abstract class?",
+    "answer": "An abstract class in Java is a class that cannot"
   },
   {
     "main-topic": "React",
@@ -22,5 +296,323 @@
     "topic": "Components",
     "object": "What is the difference between functional and class components?",
     "answer": "Functional components are simpler JavaScript functions that return JSX, while class components are ES6 classes that extend React.Component. Functional components can now use hooks to manage state and lifecycle, making them more flexible and easier to test."
+  },
+  {
+    "main-topic": "React",
+    "topic": "State Management",
+    "object": "What is Redux?",
+    "answer": "Redux is a predictable state container for JavaScript applications. It helps manage the application state in a single store, making it easier to understand and debug. Redux uses actions, reducers, and a central store to manage state changes."
+  },
+  {
+    "main-topic": "React",
+    "topic": "Definition",
+    "object": "What are State and Prop?",
+    "answer": "State - The term \"State\" in React Js refers to a type of variable that exists inside a component and is used to store data or information about the component. The state has a similar working principle as that of a local variable it cannot be accessed or modified outside its component. To modify the state we have to use this.setState, when this is applied the state class re-renders itself. \nProp -  In React Js, the term \"Prop\" is an alias name given to properties where it acts like an object which is used to store attribute values associated with various types of tags. The working principle of props is similar to HTML attributes. Props behave as a read-only component in React Js. Props are immutable."
+  },
+  {
+    "main-topic": "React",
+    "topic": "Definition",
+    "object": "What is HOC in React Js?",
+    "answer": "HOC in React Js refers to Higher-Order Components which is a type of advanced method used by the developers for reusing the logic of a component's functionality. It takes the previously developed original component and after processing it returns the enhanced results."
+  },
+  {
+    "main-topic": "Python",
+    "topic": "Definition",
+    "object": "What are the advantages of using Python language?",
+    "answer": "Easy implementation: Python is relatively easy to learn and write compared to other programming languages such as Java and C++. \nExtensive support libraries: It has Pandas for data analytics, NumPy for numerical calculations, etc. \nFree and open-source: Python is a free and open-source language with a large active community base. \nDynamically typed language: We don't need to mention data type in Python; it automatically takes the data type. \nVast libraries support: Python has rich and efficient libraries making it easier for developers. \nInterpreted language: Python is an interpreted language with line-by-line code execution, contributing to easier debugging and portability. \nSuitable for data analysis: It helps data scientists easily simplify complex numeric computing operations."
+  },
+  {
+    "main-topic": "Design Pattern",
+    "topic": "Definition",
+    "object": "",
+    "answer": "**Design patterns** are general solutions to common problems in software design.\n\n- Provide templates or blueprints for solving issues in a specific context\n- Help create flexible, reusable, and scalable code\n\n**Categories:**\n- **Creational:** Object creation mechanisms (e.g., Singleton, Factory)\n- **Structural:** Composition of classes/objects (e.g., Adapter, Decorator)\n- **Behavioral:** Object interaction and responsibilities (e.g., Observer, Strategy)"
+  },
+  {
+    "main-topic": "Design Pattern",
+    "topic": "Definition",
+    "object": "Quali categorie di design pattern conosci? Sapresti indicarmene uno per ciascuna categoria?",
+    "answer": "### Design Pattern Categories\n\n- **Creational:**\n  - Deal with object creation mechanisms\n  - Example: **Singleton**, **Factory**\n- **Structural:**\n  - Concerned with class/object composition\n  - Example: **Adapter**, **Decorator**\n- **Behavioral:**\n  - Deal with object interaction and responsibilities\n  - Example: **Observer**, **Strategy**"
+  },
+  {
+    "main-topic": "Design Pattern",
+    "topic": "Singleton",
+    "object": "Singleton",
+    "answer": "### Singleton Pattern\n\n- Ensures a class has only one instance\n- Provides a global point of access\n- Useful for managing resources (e.g., database connections, configuration)\n\n**Example (Java):**\n```java\npublic class Singleton {\n  private static Singleton instance;\n  private Singleton() {}\n  public static Singleton getInstance() {\n    if (instance == null) {\n      instance = new Singleton();\n    }\n    return instance;\n  }\n}\n```"
+  },
+  {
+    "main-topic": "Design Pattern",
+    "topic": "",
+    "object": "Observer pattern",
+    "answer": "### Observer Pattern\n\n- Defines a one-to-many dependency between objects\n- When one object changes state, all dependents are notified\n- Widely used in event-driven systems\n\n**Use Cases:**\n- UI frameworks\n- Event listeners\n- Publish/subscribe systems"
+  },
+  {
+    "main-topic": "Design Pattern",
+    "topic": "",
+    "object": "Factory pattern",
+    "answer": "### Factory Pattern\n\n- Defines an interface for creating an object\n- Subclasses alter the type of object created\n- Useful when object creation involves complex logic or depends on conditions\n\n**Example (Java):**\n```java\npublic interface Product {}\npublic class ConcreteProductA implements Product {}\npublic class ConcreteProductB implements Product {}\npublic class Factory {\n  public Product createProduct(String type) {\n    if (type.equals(\"A\")) return new ConcreteProductA();\n    else return new ConcreteProductB();\n  }\n}\n```"
+  },
+  {
+    "main-topic": "Design Pattern",
+    "topic": "",
+    "object": "Adapter Pattern",
+    "answer": "### Adapter Pattern\n\n- Allows incompatible interfaces to work together\n- Acts as a bridge between two interfaces\n- Wraps one interface to make it compatible with another\n\n**Use Cases:**\n- Integrating legacy code\n- Third-party libraries"
+  },
+  {
+    "main-topic": "Design Pattern",
+    "topic": "",
+    "object": "Decorator Pattern",
+    "answer": "### Decorator Pattern\n\n- Adds new functionality to an object dynamically\n- Does not modify the object's structure\n- Useful for extending behavior at runtime\n\n**Example:**\n- Adding logging, security, or notification features to objects"
+  },
+  {
+    "main-topic": "Design Pattern",
+    "topic": "",
+    "object": "Strategy pattern",
+    "answer": "### Strategy Pattern\n\n- Allows algorithm behavior to be selected at runtime\n- Defines a family of algorithms, encapsulates each one, and makes them interchangeable\n- Useful for situations with multiple ways to perform an operation\n\n**Example:**\n- Sorting strategies\n- Payment methods"
+  },
+  {
+    "main-topic": "Design Pattern",
+    "topic": "",
+    "object": "MVC (Model View Controller) vs MVP (Model View Presenter)",
+    "answer": "### MVC vs MVP\n\n**MVC (Model-View-Controller):**\n- Controller bridges View and Model\n- One controller can select different views\n- Limited unit testing support\n\n**MVP (Model-View-Presenter):**\n- Presenter bridges View and Model\n- One-to-one relationship between View and Presenter\n- Better unit testing support\n- Presenter manages UI logic and state\n\n**Summary Table:**\n| Pattern | Bridge | View Relationship | Unit Testing |\n|---------|--------|------------------|--------------|\n| MVC     | Controller | Many-to-one | Limited      |\n| MVP     | Presenter  | One-to-one   | Better       |"
+  },
+  {
+    "main-topic": "Database",
+    "topic": "Definition",
+    "object": "Normalizzazione e denormalizzazione",
+    "answer": "### Normalizzazione\n- Rimozione di dati ridondanti e non consistenti\n- Obiettivo: database più pulito\n- Mantiene l'integrità dei dati\n- Ottimizza lo spazio su disco\n### Denormalizzazione\n- Combina dati da più tabelle in una sola\n- Obiettivo: query più veloci\n- Non mantiene l'integrità dei dati\n- Non ottimizza lo spazio su disco"
+  },
+  {
+    "main-topic": "Database",
+    "topic": "Definition",
+    "object": "What is a database?",
+    "answer": "### Database\nUn database è un insieme di dati memorizzati in modo strutturato e organizzato, accessibili e gestibili tramite un sistema di gestione dei database (DBMS).\n- **Relazionali (SQL):** usano tabelle per organizzare i dati\n- **Non relazionali (NoSQL):** usano documenti, grafi o altri modelli\n- Permettono archiviazione, recupero e gestione efficiente dei dati"
+  },
+  {
+    "main-topic": "Database",
+    "topic": "MongoDB",
+    "object": "In what real-life scenarios should we consider MongoDB for our database?",
+    "answer": "### Quando usare MongoDB\n- Quando non serve un database relazionale\n- Quando si gestiscono grandi quantità di dati\n- In fase di prototipazione\n- Quando si richiede flessibilità nello schema dei dati"
+  },
+  {
+    "main-topic": "Database",
+    "topic": "PostgreSQL",
+    "object": "In PostgreSQL, what is meant by Cluster and Non-Cluster Indexes?",
+    "answer": "### Clustered vs Non-Clustered Indexes in PostgreSQL\n- **Clustered Index:**\n- Ordina fisicamente i dati della tabella secondo l'indice\n- Migliora le performance di query su colonne indicizzate\n- **Non-Clustered Index:**\n- Non modifica l'ordine fisico dei dati\n- Mantiene una struttura separata per l'indice\n- Può essere usato per ricerche rapide senza riordinare la tabella"
+  },
+  {
+    "main-topic": "Database",
+    "topic": "",
+    "object": "State the difference between the DROP command and the TRUNCATE command in SQL.",
+    "answer": "### DROP vs TRUNCATE\n- **DROP:**\n- Elimina una tabella dal database\n- Operazione irreversibile\n- **TRUNCATE:**\n- Elimina tutte le righe di una tabella\n- La struttura della tabella rimane\n- Può essere reversibile in alcuni DBMS"
+  },
+  {
+    "main-topic": "Database",
+    "topic": "",
+    "object": "What is the clausole HAVING?",
+    "answer": "### HAVING Clause\n- Usata per filtrare i risultati dopo un GROUP BY\n- Si applica dopo l'aggregazione dei dati\n- WHERE filtra prima del GROUP BY, HAVING dopo"
+  },
+  {
+    "main-topic": "Database",
+    "topic": "",
+    "object": "Explain in detail about DDL, DML, DCL, and TCL commands in SQL.",
+    "answer": "### Tipi di comandi SQL\n- **DDL (Data Definition Language):**\n- Definisce la struttura dei dati (CREATE, ALTER, DROP)\n- **DML (Data Manipulation Language):**\n- Modifica i dati esistenti (SELECT, UPDATE, INSERT)\n- **DCL (Data Control Language):**\n- Gestisce i permessi di accesso (GRANT, REVOKE)\n- **TCL (Transaction Control Language):**\n- Gestisce le transazioni (COMMIT, ROLLBACK, SAVEPOINT)"
+  },
+  {
+    "main-topic": "Database",
+    "topic": "Query",
+    "object": "How do you optimize SQL queries?",
+    "answer": "### Ottimizzazione delle query SQL\n- **Indicizzazione:** velocizza l'accesso ai dati\n- **SELECT specifico:** evita SELECT * per ridurre I/O\n- **JOIN appropriati:** usa solo i JOIN necessari\n- **Sottoquery:** a volte più efficienti dei JOIN\n- **Alias:** rendono le query più leggibili\n- **Design ottimizzato:** evita dati ridondanti, usa tipi appropriati\n- **Wildcard:** ricerca flessibile\n- **Profiling:** usa strumenti come EXPLAIN per analizzare le query"
+  },
+  {
+    "main-topic": "Database",
+    "topic": "Indexing",
+    "object": "How does database indexing work?",
+    "answer": "### Database Indexing\n- Simile all'indice di un libro\n- Aiuta a trovare rapidamente i dati\n- Riduce il numero di righe da controllare\n- Migliora le performance delle query con WHERE"
+  },
+  {
+    "main-topic": "REST API",
+    "topic": "Definition",
+    "object": "How to secure an API?",
+    "answer": "There are several ways to secure an API: \nAuthentication: Use authentication methods like OAuth, JWT, or API keys to ensure that only authorized users can access the API. \nHTTPS: Always use HTTPS to encrypt data in transit and protect sensitive information from being intercepted. \nRate Limiting: Implement rate limiting to prevent abuse and protect the API from DDoS attacks. \nInput Validation: Validate all input data to prevent SQL injection, XSS, and other attacks. \nCORS: Use Cross-Origin Resource Sharing (CORS) to control which domains can access the API. \nLogging and Monitoring: Implement logging and monitoring to track API usage and detect any suspicious activity."
+  },
+  {
+    "main-topic": "HTTP Protocols",
+    "topic": "Protocols",
+    "object": "Quali sono secondo te le differenze fra i metodi GET e POST del protocollo HTTP?",
+    "answer": "GET: It is used to retrieve data from the server. \nPOST: It is used to send data to the server for processing or updating the existing data."
+  },
+  {
+    "main-topic": "",
+    "topic": "",
+    "object": "Quali sono le differenze tra i cookies e l'HTTP session?",
+    "answer": "-I cookies vengono memorizzati sul client e la session sul server. I cookies sono modificabili dall'utente e quindi certe operazioni è consigliabile non farle sui cookies."
+  },
+  {
+    "main-topic": "",
+    "topic": "",
+    "object": "Cosa si intende per DevOps?",
+    "answer": "Il termine DevOps indica l'unione delle fasi di sviluppo (dev) e operazioni più legati alla parte IT (ops). Con l'obiettivo di accelerare la fase di sviluppo e rilascio di un prodotto. L'obiettivo principale di DevOps è ridurre al minimo i silos organizzativi tra team di sviluppo e team di operazioni, promuovendo la collaborazione continua e l'automazione dei processi.  Questo approccio enfatizza l'automazione del rilascio, il monitoraggio, la scalabilità e la gestione dei problemi in modo da poter rilasciare applicazioni in modo rapido, affidabile e scalabile."
+  },
+  {
+    "main-topic": "CI/CD",
+    "topic": "Definition",
+    "object": "Cos'è la CI/CD (Continuous Integration, Continuous Delivery)",
+    "answer": "Continuous Integration (CI): È il processo di integrazione automatica dei cambiamenti del codice nel repository principale multiple volte al giorno. Ogni volta che un membro del team fa un commit delle modifiche, un sistema CI esegue una serie di test automatici per assicurarsi che il codice sia funzionante e che non introduca errori nel progetto condiviso. L'obiettivo è rilevare e risolvere i problemi più rapidamente possibile. \nContinuous Delivery (CD): È il processo di automatizzazione della distribuzione del software in un ambiente di produzione o di test, dopo che è stata completata la fase di Continuous Integration. L'idea è quella di rendere possibile il rilascio di nuove versioni del software in qualsiasi momento, garantendo che il processo di distribuzione sia automatizzato, affidabile e reversibile. Se tutti i test di Continuous Integration passano con successo, il software può essere distribuito automaticamente senza intervento manuale.\n\nIn sintesi, CI/CD è una pratica chiave in DevOps che mira a garantire che il codice venga integrato e distribuito in modo continuo e affidabile, riducendo al minimo il rischio di errori e semplificando il processo di rilascio del software."
+  },
+  {
+    "main-topic": "Git",
+    "topic": "Flow",
+    "object": "Spiega il workflow di Gitflow",
+    "answer": "Il workflow Git prevede due branch che seguono la storia del progetto, master e develop \nMaster, è il branch sempre pronto alla messa in produzione \nHotfix, è usato per il rilascio di rapide patch in produzione \nDevelop, è il branch dove si fanno gli sviluppi. Quando tutto è stato testato e verificato si può fare il marge sul master \nFeature, ogni nuova feature può essere messa qui e successivamente si può effettuare il merge per portarla in Develop"
+  },
+  {
+    "main-topic": "Git",
+    "topic": "Flow",
+    "object": "Spiega il workflow di Fork",
+    "answer": "Invece di utilizzare un singolo repository lato server come codebase 'centrale', tramite il fork ogni sviluppatore avrà a disposizione un proprio repository lato server. Di conseguenza, ogni collaboratore non avrà uno, ma due repository Git: uno privato locale e uno pubblico lato server. Il flusso di lavoro di forking è presente più spesso nei progetti open source pubblici. \nIl vantaggio principale del flusso di lavoro di forking è che i contributi possono essere integrati senza che tutti debbano eseguire il push in un unico repository centrale. Gli sviluppatori eseguono il push nei propri repository lato server, mentre il push nel repository ufficiali può essere effettuato solo dal responsabile del progetto, che può quindi accettare commit da tutti gli sviluppatori senza concedere loro l'accesso in scrittura al codebase ufficiale. \nDopo aver creato la propria copia lato server, lo sviluppatore esegue un clone Git per scaricarne una copia sul proprio computer locale. Questo funge da ambiente di sviluppo privato, proprio come negli altri flussi di lavoro. \nQuando è pronto a pubblicare un commit locale, ne esegue il push al proprio repository pubblico, non a quello ufficiale. Quindi, presenta una pull request al repository principale, che consente al responsabile del progetto di sapere che un aggiornamento è pronto per essere integrato. La pull request funge anche da comodo thread di discussione in caso di problemi con il codice fornito. Quello che segue è un esempio dettagliato di questo flusso di lavoro."
+  },
+  {
+    "main-topic": "Git",
+    "topic": "Flow",
+    "object": "Spiega il workflow Feature Branch Git",
+    "answer": "L'idea principale alla base del flusso di lavoro Feature Branch è che l'intero sviluppo delle funzionalità avviene in un branch dedicato anziché in quello principale. Questo incapsulamento rende facile per più sviluppatori lavorare su una particolare funzionalità senza toccare la base di codice principale. Significa anche che il ramo principale non conterrà mai codice errato, il che è un enorme vantaggio per gli ambienti di continuous integration."
+  },
+  {
+    "main-topic": "Git",
+    "topic": "",
+    "object": "Qual è la differenza tra git pull e git fetch?",
+    "answer": "In maniera molto semplice, il git pull esegue un git fetch seguito da un git merge. \ngit pull, effettua il merge automatico senza farti revisionare il codice. \ngit fetch, scarica tutte le commit del branch non presenti nel tuo codice locale, ti lascia il compito di revisionarlo e verificare cosa integrare o meno e infine lascia a te il compito di eseguire git merge."
+  },
+  {
+    "main-topic": "API",
+    "topic": "",
+    "object": "Spiega la differenza tra REST e GraphQL",
+    "answer": "WebSocket e i servizi REST sono entrambi utilizzati per la comunicazione tra client e server, ma ci sono alcune differenze significative tra i due. \nWebSocket è un protocollo di comunicazione bidirezionale che consente una connessione persistente tra client e server. È basato su TCP e permette la trasmissione di dati in tempo reale tra le due parti. WebSocket è particolarmente utile per le applicazioni che richiedono una comunicazione in tempo reale o una sincronizzazione continua dei dati, come chat, giochi online o applicazioni di collaborazione. \nI servizi REST (Representational State Transfer) seguono un'architettura client-server basata sul protocollo HTTP. In un servizio REST, le richieste del client vengono inviate al server tramite richieste HTTP (ad esempio GET, POST, PUT, DELETE) e il server risponde con una rappresentazione dello stato delle risorse richieste (spesso in formato JSON o XML). I servizi REST sono ampiamente utilizzati per creare API (Application Programming Interface) che consentono ai client di interagire con le risorse del server in modo standardizzato. \nIn sintesi, WebSocket è più adatto per applicazioni che richiedono una comunicazione bidirezionale in tempo reale, mentre i servizi REST sono ideali per le operazioni stateless basate su richieste HTTP."
+  },
+  {
+    "main-topic": "",
+    "topic": "",
+    "object": "Cos'è CORS (Cross-Origin Resource Sharing) e a cosa serve?",
+    "answer": "è un meccanismo di sicurezza implementato nei browser che controlla e gestisce le richieste HTTP tra due origini diverse, ovvero due domini, protocolli o porte differenti. \nOrigini diverse, un'origine è composta da protocollo, dominio e porta. Basta che differisca uno di questi tre elementi, le pagine web vengono considerate come origini differenti. Esempio: http://example.com e https://api.example.com sono due origini diverse \nPolitiche Same-Origin, di default i browser hanno un'impostazione predefinita che fa sì che un sito possa accettare richieste solo dalla stessa origine. Questo aiuta a impedire agli script malevoli di accedere a dati o risorse su altri domini \nCORS Headers, includendo specifici Header CORS, il browser sa se è consentita o meno la richiesta proveniente da un'origine diversa. \nAccess-Control-Allow-Origin, L'header più comune utilizzato è 'Access-Control-Allow-Origin'. Questo header specifica quali origini sono autorizzate ad accedere alla risorsa. \nMetodi e Altri Headers, altri headers utilizzabili sono: Access-Control-Allow-Methods e Access-Control-Allow-Headers \n\nUna configurazione errata delle policy CORS possono portare delle vulnerabilità ad attacchi quali CSRF (Cross-Site Request Forgery)."
+  },
+  {
+    "main-topic": "Server",
+    "topic": "",
+    "object": "Differenza tra Kafka e Tomcat",
+    "answer": "Pur essendo entrambi della Apache Software Foundation, sono due prodotti totalmente differenti. Il primo è utilizzato per gestire flussi di dati in tempo reale e analizzare i dati in tempo reale. Il secondo è un server web utilizzato per eseguire applicazioni web Java e gestire richieste HTTP."
+  },
+  {
+    "main-topic": "HTTP",
+    "topic": "Cookie",
+    "object": "A cosa serve il flag httpOnly? ",
+    "answer": "è una direttiva utilizzata nei cookie HTTP che fornisce una misura di sicurezza aggiuntiva per proteggere i cookie da rischi legati a script malevoli o attacchi di cross-site scripting (XSS). Se un cookie ha l'impostazione httpOnly attiva, può essere letto e modificato solo dal server web e non può essere letto o modificato tramite JavaScript"
+  },
+  {
+    "main-topic": "",
+    "topic": "Definition",
+    "object": "Cosa si indica con i termini Vanilla JS e Vanilla CSS?",
+    "answer": "Si riferisce all'uso puro e non modificato di JavaScript e CSS. Questi termini indicano l'uso delle versioni \"base\" senza l'uso di librerie, framework o preprocessori."
+  },
+  {
+    "main-topic": "DDD, TDD, BDD",
+    "topic": "Definition",
+    "object": "Domain-Driven Development, Test Data-Driven, Business-Driven Development",
+    "answer": "Domain-Driven Development (DDD):  \nSviluppo guidato dal dominio, si mette l'accento sulla comprensione approfondita del dominio o settore specifico. \nCollaborazione diretta tra sviluppatori ed esperti di dominio \nTest Data-Driven (TDD): \nIl focus è sulla creazione di casi di test e dati di test che guidano lo sviluppo \nQuesto approccio è particolarmente utile nei contesti in cui la correttezza e la validità dei dati sono fondamentali (es. software finanziari, medici o scenari di convalida dei dati) \nBusiness-Driven Development: \nIl focus è sulla comprensione delle esigenze e degli obiettivi aziendali che guidano lo sviluppo"
+  },
+  {
+    "main-topic": "HTTP",
+    "topic": "Cookie",
+    "object": "Lista dei campi all'interno di un cookie",
+    "answer": "Name: Il nome del cookie. \nValue: Il valore del cookie. \nDomain: Il dominio per il quale il cookie è valido. \nPath: Il percorso per il quale il cookie è valido. \nExpires/Max-Age: La data di scadenza o la durata del cookie. \nSecure: Indica se il cookie deve essere trasmesso solo su connessioni HTTPS. \nHttpOnly: Indica se il cookie non può essere accessibile tramite JavaScript. \nSameSite: Indica se il cookie deve essere inviato solo con richieste dello stesso sito."
+  },
+  {
+    "main-topic": "",
+    "topic": "",
+    "object": "REST vs WebSocket",
+    "answer": "WebSocket e i servizi REST sono entrambi utilizzati per la comunicazione tra client e server, ma ci sono alcune differenze significative tra i due. \nWebSocket è un protocollo di comunicazione bidirezionale che consente una connessione persistente tra client e server. È basato su TCP e permette la trasmissione di dati in tempo reale tra le due parti. WebSocket è particolarmente utile per le applicazioni che richiedono una comunicazione in tempo reale o una sincronizzazione continua dei dati, come chat, giochi online o applicazioni di collaborazione. \nI servizi REST (Representational State Transfer) seguono un'architettura client-server basata sul protocollo HTTP. In un servizio REST, le richieste del client vengono inviate al server tramite richieste HTTP (ad esempio GET, POST, PUT, DELETE) e il server risponde con una rappresentazione dello stato delle risorse richieste (spesso in formato JSON o XML). I servizi REST sono ampiamente utilizzati per creare API (Application Programming Interface) che consentono ai client di interagire con le risorse del server in modo standardizzato. \nIn sintesi, WebSocket è più adatto per applicazioni che richiedono una comunicazione bidirezionale in tempo reale, mentre i servizi REST sono ideali per le operazioni stateless basate su richieste HTTP."
+  },
+  {
+    "main-topic": "Terraform",
+    "topic": "Definition",
+    "object": "Cos'è Terraform?",
+    "answer": "è uno strumento utilizzato per automatizzare e gestire l'infrastruttura come codice. Consente di definire, configurare e distribuire risorse di infrastruttura su diversi provider di cloud computing, come Amazon Web Services (AWS), Microsoft Azure, Google Cloud Platform (GCP) e molti altri. La principale funzionalità di Terraform è quella di consentire agli sviluppatori e agli operatori di dichiarare l'infrastruttura desiderata in un formato leggibile dall'uomo, noto come codice di configurazione. Questo codice viene scritto utilizzando il linguaggio di descrizione dell'infrastruttura (Infrastructure as Code, IaC) di HashiCorp chiamato HCL (HashiCorp Configuration Language) o, più recentemente, il formato JSON. \nTerraform gestisce quindi le risorse dell'infrastruttura tramite i provider supportati, permettendo di creare, modificare e distruggere l'infrastruttura in modo coerente e ripetibile. Il vantaggio principale dell'utilizzo di Terraform è che l'intera infrastruttura può essere trattata come codice, il che significa che può essere versionata, revisionata, condivisa e gestita tramite un sistema di controllo del codice sorgente. \nTerraform è particolarmente utile in scenari in cui si desidera gestire infrastrutture complesse e ridurre l'onere di doverle creare manualmente o tramite interfacce utente grafiche. Alcuni casi d'uso comuni includono: \nProvisioning dell'infrastruttura: Terraform semplifica il provisioning delle risorse, consentendo di creare l'infrastruttura necessaria per le applicazioni o i servizi. \nOrchestrazione multi-cloud: se si desidera distribuire un'applicazione su più provider di cloud computing o su più regioni, Terraform può aiutare a gestire e coordinare le risorse su diverse piattaforme. \nAutomazione delle modifiche: Terraform consente di apportare modifiche all'infrastruttura in modo sicuro e controllato. È possibile definire le modifiche nel codice di configurazione e applicarle in modo coerente su più ambienti. \nAmbiente di sviluppo riproducibile: utilizzando Terraform, è possibile creare ambienti di sviluppo replicabili e coerenti, che possono essere facilmente condivisi tra gli sviluppatori."
+  },
+  {
+    "main-topic": "Ansible",
+    "topic": "Definition",
+    "object": "Cos'è Ansible?",
+    "answer": "Ansible è una popolare piattaforma di automazione open-source utilizzata per semplificare e automatizzare la gestione delle configurazioni e delle operazioni dei sistemi IT. Consente agli amministratori di sistema di definire i processi e le configurazioni desiderate in modo dichiarativo, senza dover scrivere script o codice personalizzato.  \nGli obiettivi principali di Ansible sono la semplicità, la facilità d'uso e la scalabilità. Utilizza un linguaggio di configurazione semplice chiamato YAML (YAML Ain't Markup Language) per descrivere le configurazioni dei sistemi e le operazioni da eseguire. Ansible si basa su SSH (Secure Shell) per connettersi e comunicare con i sistemi target, consentendo una gestione remota efficiente. \nAnsible può essere utilizzato per automatizzare una vasta gamma di attività, tra cui: \nConfigurazione del sistema: può essere utilizzato per gestire la configurazione di server, computer desktop, dispositivi di rete e altri sistemi IT. Ad esempio, è possibile definire la configurazione desiderata di un server web e utilizzare Ansible per applicare automaticamente tale configurazione a uno o più server. \nGestione delle applicazioni: Ansible consente di automatizzare il processo di installazione, configurazione e gestione delle applicazioni. Ad esempio, è possibile definire un playbook (un insieme di istruzioni Ansible) per installare un'applicazione web su un server e distribuirla su più ambienti. \nOrchestrazione di servizi: Ansible può essere utilizzato per coordinare e orchestrare diversi servizi e componenti di sistema, garantendo che vengano eseguite le azioni corrette nel momento giusto. Ad esempio, è possibile utilizzare Ansible per gestire la scalabilità dinamica di un'infrastruttura cloud, avviando o terminando istanze di server in base al carico di lavoro. \nGestione della configurazione: Ansible può essere utilizzato per mantenere la coerenza e l'aggiornamento delle configurazioni dei sistemi IT nel tempo. Consente di applicare facilmente modifiche alle configurazioni esistenti, assicurando che tutti i sistemi vengano mantenuti allineati e aggiornati."
+  },
+  {
+    "main-topic": "",
+    "topic": "",
+    "object": "Spiega il senso del multithreading",
+    "answer": "Il thread è una parte indipendente di un processo o un'applicazione che viene eseguita. Quando si parla di multithreading, si intende l'esecuzione in contemporanea di più thread. Il vantaggio nel multithreading è l'ottimizzazione delle risorse, applicazioni più veloci, se un thread va incontro ad un'eccezione gli altri thread non sono interessati."
+  },
+  {
+    "main-topic": "",
+    "topic": "",
+    "object": "Spiega il Pair Programming",
+    "answer": "Tecnica di programmazione dove due programmatori condividono un solo computer. Un programmatore scrive e l'altro supervisiona se il codice è ben scritto, leggibile e funzionale."
+  },
+  {
+    "main-topic": "",
+    "topic": "",
+    "object": "Cos'è il long polling?",
+    "answer": "è una tecnica utilizzata per l'invio di informazioni tra server e client. Quando il client fa una richiesta, la connessione viene lasciata aperta fin quando il server non ha le informazioni e risponde. La connessione viene chiusa dopo che le informazioni sono state inviate oppure in caso di timeout."
+  },
+  {
+    "main-topic": "",
+    "topic": "",
+    "object": "Cos'è una Progressive app?",
+    "answer": "Una Progressive Web App (PWA) è un'applicazione web che offre funzionalità simili a quelle di un'applicazione nativa. Le PWA combinano le migliori caratteristiche delle applicazioni web e native.\n\nCaratteristiche principali:\n- Installabile sul dispositivo\n- Funziona offline\n- Push notifications\n- Accesso rapido\n- Aggiornamenti automatici\n\nVantaggi:\n- Non richiede pubblicazione su store\n- Accesso immediato\n- Esperienza utente migliorata\n- Costi di sviluppo ridotti\n- Compatibilità cross-platform"
+  },
+  {
+    "main-topic": "",
+    "topic": "",
+    "object": "Cos'è una Real-time web app?",
+    "answer": "Una Real-time web app è un'applicazione web che fornisce informazioni in tempo reale agli utenti senza necessità di ricaricare la pagina.\n\nCaratteristiche principali:\n- Aggiornamenti istantanei\n- Comunicazione bidirezionale\n- Bassa latenza\n- Connessione persistente\n\nTecnologie utilizzate:\n- WebSocket\n- Server-Sent Events (SSE)\n- Long Polling\n- WebRTC\n\nCasi d'uso comuni:\n- Chat in tempo reale\n- Giochi online\n- Dashboard live\n- Collaborazione in tempo reale\n- Monitoraggio di sistemi"
+  },
+  {
+    "main-topic": "",
+    "topic": "",
+    "object": "Dependency Injection",
+    "answer": "Dependency Injection (DI) è un pattern di design che implementa il principio di inversione delle dipendenze.\n\nDefinizione:\n- Tecnica per fornire le dipendenze a una classe\n- Inverte il controllo del flusso del programma\n- Riduce l'accoppiamento tra le classi\n\nVantaggi:\n- Codice più testabile\n- Maggiore modularità\n- Migliore manutenibilità\n- Riutilizzo del codice\n\nTipi di DI:\n- Constructor Injection\n- Setter Injection\n- Method Injection\n- Field Injection\n\nEsempio:\n```java\npublic class UserService {\n    private final UserRepository repository;\n    \n    public UserService(UserRepository repository) {\n        this.repository = repository;\n    }\n}\n```"
+  },
+  {
+    "main-topic": "HTTP",
+    "topic": "Methods",
+    "object": "What is the difference between PUT and PATCH?",
+    "answer": "PUT vs PATCH:\n\n1. PUT:\n- Updates entire resource\n- Replaces existing resource\n- Idempotent operation\n- Requires complete resource data\n\n2. PATCH:\n- Updates partial resource\n- Modifies specific fields\n- Not strictly idempotent\n- Requires only changed fields\n\nKey Differences:\n- Scope of update\n- Data requirements\n- Idempotency\n- Use cases\n\nBest Practices:\n- Use PUT for complete updates\n- Use PATCH for partial updates\n- Consider idempotency needs"
+  },
+  {
+    "main-topic": "",
+    "topic": "",
+    "object": "Distinguish between Hashtable and HashMap.",
+    "answer": "HashMap \nHashTable \nIt is not synchronized and not thread safe \nSynchronized and thread safe \nIt allows one null in key and any number of null in value \nIt does not allow null keys or values \nIt is faster in single thread application \nIt is slower due to synchronization"
+  },
+  {
+    "main-topic": "",
+    "topic": "",
+    "object": "Talk about multi-threading.",
+    "answer": "A thread is defined as the single, sequential flow of the control within a program. It is not the program itself and cannot run on its own. In a running program, a thread may have to dig some of its resources. Multi-threading is a process that is used to improve CPU performance. Through this process, multiple users can manage the program at the same time, or the same user can manage several requests simultaneously. Multi-threading is achieved by executing several processes that the operating system supports.For example, a web browser has multi-threads running simultaneously - while you scroll through a page, you can simultaneously download an application or a document, listen to music, take a print in the background, and more."
+  },
+  {
+    "main-topic": "HTML/CSS",
+    "topic": "",
+    "object": "Mention all the ways by which we can include the CSS code in an HTML code",
+    "answer": "Ci sono tre modi principali per includere CSS in un documento HTML:\n\n1. Inline CSS:\n- Usando l'attributo style\n- Applicato direttamente agli elementi\n- Esempio: <div style=\"color: blue;\">\n\n2. Internal CSS:\n- Usando il tag <style> nell'<head>\n- Applicato a tutto il documento\n- Esempio:\n```html\n<head>\n  <style>\n    p { color: red; }\n  </style>\n</head>\n```\n\n3. External CSS:\n- Usando il tag <link> nell'<head>\n- Collegamento a file CSS esterno\n- Esempio:\n```html\n<head>\n  <link rel=\"stylesheet\" href=\"styles.css\">\n</head>\n```\n\nBest Practices:\n- Preferire CSS esterno per manutenibilità\n- Usare inline solo per stili specifici\n- Organizzare i file CSS in modo logico"
+  },
+  {
+    "main-topic": "Markdown",
+    "topic": "Examples",
+    "object": "Markdown Formatting Examples",
+    "answer": "# Markdown Examples\n\n## Text Formatting\n\nThis is **bold text** and this is *italic text*. You can also use ~~strikethrough~~.\n\n## Code Examples\n\nHere's a simple Node.js code example:\n\n```javascript\nconst express = require('express');\nconst app = express();\n\napp.get('/', (req, res) => {\n  res.send('Hello World!');\n});\n\napp.listen(3000, () => {\n  console.log('Server running on port 3000');\n});\n```\n\n## Lists\n\n### Unordered List\n\n* Item 1\n* Item 2\n* Item 3\n\n### Ordered List\n\n1. First item\n2. Second item\n3. Third item\n\n## Links and Images\n\n[Visit our website](https://example.com)\n\n## Blockquotes\n\n> This is a blockquote\n> It can span multiple lines\n\n## Tables\n\n| Header 1 | Header 2 |\n|----------|----------|\n| Cell 1   | Cell 2   |\n| Cell 3   | Cell 4   |"
+  },
+  {
+    "main-topic": "Javascript",
+    "topic": "Definition",
+    "object": "What are closures in JavaScript?",
+    "answer": "Closures in JavaScript:\n\nDefinition:\n- Function with access to outer scope\n- Maintains state between executions\n- Preserves data privacy\n\nKey Features:\n1. Scope Access:\n- Inner function accesses outer variables\n- Variables remain in memory\n- Private variable creation\n\n2. Use Cases:\n- Data privacy\n- Function factories\n- Event handlers\n- Module patterns\n\nExample:\n```javascript\nfunction createCounter() {\n  let count = 0;\n  return function() {\n    return ++count;\n  };\n}\n```"
   }
-] 
+]

@@ -53,6 +53,10 @@ A modern React web application that acts as a personal knowledge container about
 - HeadlessUI
 - Heroicons
 
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
 ## License
 
 MIT

@@ -148,19 +148,14 @@ function Sidebar({
                           {/* Objects (mostrati solo se il topic è selezionato) */}
                           {selectedTopic === topic && (
                             <div className="object-list">
-                              {knowledgeData[mainTopic][topic].map((item: any, index: any) => (
-                                <div 
-                                key={index}
-                                className="object-container"  // Nuovo contenitore per gestire il tooltip
-                            >
+                              {knowledgeData[mainTopic][topic].map((item: any) => (
                                 <div 
                                     className="object"
                                     onClick={() => onObjectSelect(item.object)}
-                                    data-tooltip={item.object}  // Aggiungiamo il testo completo come attributo
+                                    //data-tooltip={item.object}  // Aggiungiamo il testo completo come attributo
                                 >
                                     {item.object}
                                 </div>
-                            </div>
                               ))}
                             </div>
                           )}
