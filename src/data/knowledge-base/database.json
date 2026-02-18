@@ -58,5 +58,11 @@
     "topic": "Query",
     "object": "How do you optimize SQL queries?",
     "answer": "### Ottimizzazione delle query SQL\n- **Indicizzazione:** velocizza l'accesso ai dati\n- **SELECT specifico:** evita SELECT * per ridurre I/O\n- **JOIN appropriati:** usa solo i JOIN necessari\n- **Sottoquery:** a volte più efficienti dei JOIN\n- **Alias:** rendono le query più leggibili\n- **Design ottimizzato:** evita dati ridondanti, usa tipi appropriati\n- **Wildcard:** ricerca flessibile\n- **Profiling:** usa strumenti come EXPLAIN per analizzare le query"
+  },
+  {
+    "main-topic": "Database",
+    "topic": "PostgreSQL",
+    "object": "Materialized Views",
+    "answer": "Sono viste fisiche che memorizzano i risultati di una query come tabella reale, non virtuale. A differenza delle view normali (che ricalcolano sempre), le materialized views precalcolano aggregazioni complesse (es. SUM(fatturato) GROUP BY day) e le salvano su disco.\n\n### Esempio: \nCREATE MATERIALIZED VIEW daily_revenue AS SELECT date_trunc('day', order_date) as day, SUM(amount) FROM orders GROUP BY 1; poi REFRESH MATERIALIZED VIEW daily_revenue via cron ogni ora. Query veloci su aggregazioni, refresh manuale/controllo per consistenza forte."
   }
 ]
