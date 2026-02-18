@@ -1,0 +1,8 @@
+[
+  {
+    "main-topic": "HTTP Protocols",
+    "topic": "Protocols",
+    "object": "Quali sono secondo te le differenze fra i metodi GET e POST del protocollo HTTP?",
+    "answer": "GET: It is used to retrieve data from the server. \nPOST: It is used to send data to the server for processing or updating the existing data."
+  }
+]

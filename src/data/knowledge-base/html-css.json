@@ -1,0 +1,8 @@
+[
+  {
+    "main-topic": "HTML/CSS",
+    "topic": "",
+    "object": "Mention all the ways by which we can include the CSS code in an HTML code",
+    "answer": "Ci sono tre modi principali per includere CSS in un documento HTML:\n\n1. Inline CSS:\n- Usando l'attributo style\n- Applicato direttamente agli elementi\n- Esempio: <div style=\"color: blue;\">\n\n2. Internal CSS:\n- Usando il tag <style> nell'<head>\n- Applicato a tutto il documento\n- Esempio:\n```html\n<head>\n  <style>\n    p { color: red; }\n  </style>\n</head>\n```\n\n3. External CSS:\n- Usando il tag <link> nell'<head>\n- Collegamento a file CSS esterno\n- Esempio:\n```html\n<head>\n  <link rel=\"stylesheet\" href=\"styles.css\">\n</head>\n```\n\nBest Practices:\n- Preferire CSS esterno per manutenibilità\n- Usare inline solo per stili specifici\n- Organizzare i file CSS in modo logico"
+  }
+]

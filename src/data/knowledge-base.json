@@ -614,5 +614,17 @@
     "topic": "Definition",
     "object": "What are closures in JavaScript?",
     "answer": "Closures in JavaScript:\n\nDefinition:\n- Function with access to outer scope\n- Maintains state between executions\n- Preserves data privacy\n\nKey Features:\n1. Scope Access:\n- Inner function accesses outer variables\n- Variables remain in memory\n- Private variable creation\n\n2. Use Cases:\n- Data privacy\n- Function factories\n- Event handlers\n- Module patterns\n\nExample:\n```javascript\nfunction createCounter() {\n  let count = 0;\n  return function() {\n    return ++count;\n  };\n}\n```"
+  },
+  {
+    "main-topic": "HTTP",
+    "topic": "Header",
+    "object": "Quando ha senso usare degli header HTTP personalizzati?",
+    "answer": "Usare un header personalizzato ha senso quando si vogliono passare dei metadati e non si vuole includere l'informazione nel body della richiesta o risposta.\n\nHa senso usarli nei seguenti casi: \n1)Propagazione del contesto (microservizi, tracing, logging). Si genera un header X-request-Id, così si possono correlare i log su più servizi. \n2)Feature flags lato backend. Usare header custom per abilitare lato backend delle feature ad alcuni utenti specifici. \n3)Versioning API senza specificarlo nell'url. Anziché usera path del tipo api/v2/users, si usa l'header X-API-Version: 2. \n4)Informazioni multi-tenant. \n\nQuando non usarli: MAI in caso di sicurezza. L'header può essere manipolato lato client. "
+  },
+  {
+    "main-topic": "Database",
+    "topic": "PostgreSQL",
+    "object": "Materialized Views",
+    "answer": "Sono viste fisiche che memorizzano i risultati di una query come tabella reale, non virtuale. A differenza delle view normali (che ricalcolano sempre), le materialized views precalcolano aggregazioni complesse (es. SUM(fatturato) GROUP BY day) e le salvano su disco.\n\n### Esempio: \nCREATE MATERIALIZED VIEW daily_revenue AS SELECT date_trunc('day', order_date) as day, SUM(amount) FROM orders GROUP BY 1; poi REFRESH MATERIALIZED VIEW daily_revenue via cron ogni ora. Query veloci su aggregazioni, refresh manuale/controllo per consistenza forte."
   }
 ]

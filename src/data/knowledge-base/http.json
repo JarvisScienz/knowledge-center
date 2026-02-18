@@ -1,0 +1,26 @@
+[
+  {
+    "main-topic": "HTTP",
+    "topic": "Cookie",
+    "object": "A cosa serve il flag httpOnly? ",
+    "answer": "è una direttiva utilizzata nei cookie HTTP che fornisce una misura di sicurezza aggiuntiva per proteggere i cookie da rischi legati a script malevoli o attacchi di cross-site scripting (XSS). Se un cookie ha l'impostazione httpOnly attiva, può essere letto e modificato solo dal server web e non può essere letto o modificato tramite JavaScript"
+  },
+  {
+    "main-topic": "HTTP",
+    "topic": "Cookie",
+    "object": "Lista dei campi all'interno di un cookie",
+    "answer": "Name: Il nome del cookie. \nValue: Il valore del cookie. \nDomain: Il dominio per il quale il cookie è valido. \nPath: Il percorso per il quale il cookie è valido. \nExpires/Max-Age: La data di scadenza o la durata del cookie. \nSecure: Indica se il cookie deve essere trasmesso solo su connessioni HTTPS. \nHttpOnly: Indica se il cookie non può essere accessibile tramite JavaScript. \nSameSite: Indica se il cookie deve essere inviato solo con richieste dello stesso sito."
+  },
+  {
+    "main-topic": "HTTP",
+    "topic": "Header",
+    "object": "Quando ha senso usare degli header HTTP personalizzati?",
+    "answer": "Usare un header personalizzato ha senso quando si vogliono passare dei metadati e non si vuole includere l'informazione nel body della richiesta o risposta.\n\nHa senso usarli nei seguenti casi: \n1)Propagazione del contesto (microservizi, tracing, logging). Si genera un header X-request-Id, così si possono correlare i log su più servizi. \n2)Feature flags lato backend. Usare header custom per abilitare lato backend delle feature ad alcuni utenti specifici. \n3)Versioning API senza specificarlo nell'url. Anziché usera path del tipo api/v2/users, si usa l'header X-API-Version: 2. \n4)Informazioni multi-tenant. \n\nQuando non usarli: MAI in caso di sicurezza. L'header può essere manipolato lato client. "
+  },
+  {
+    "main-topic": "HTTP",
+    "topic": "Methods",
+    "object": "What is the difference between PUT and PATCH?",
+    "answer": "PUT vs PATCH:\n\n1. PUT:\n- Updates entire resource\n- Replaces existing resource\n- Idempotent operation\n- Requires complete resource data\n\n2. PATCH:\n- Updates partial resource\n- Modifies specific fields\n- Not strictly idempotent\n- Requires only changed fields\n\nKey Differences:\n- Scope of update\n- Data requirements\n- Idempotency\n- Use cases\n\nBest Practices:\n- Use PUT for complete updates\n- Use PATCH for partial updates\n- Consider idempotency needs"
+  }
+]

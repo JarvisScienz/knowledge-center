@@ -1,0 +1,62 @@
+[
+  {
+    "main-topic": "Database",
+    "topic": "",
+    "object": "Explain in detail about DDL, DML, DCL, and TCL commands in SQL.",
+    "answer": "### Tipi di comandi SQL\n- **DDL (Data Definition Language):**\n- Definisce la struttura dei dati (CREATE, ALTER, DROP)\n- **DML (Data Manipulation Language):**\n- Modifica i dati esistenti (SELECT, UPDATE, INSERT)\n- **DCL (Data Control Language):**\n- Gestisce i permessi di accesso (GRANT, REVOKE)\n- **TCL (Transaction Control Language):**\n- Gestisce le transazioni (COMMIT, ROLLBACK, SAVEPOINT)"
+  },
+  {
+    "main-topic": "Database",
+    "topic": "",
+    "object": "State the difference between the DROP command and the TRUNCATE command in SQL.",
+    "answer": "### DROP vs TRUNCATE\n- **DROP:**\n- Elimina una tabella dal database\n- Operazione irreversibile\n- **TRUNCATE:**\n- Elimina tutte le righe di una tabella\n- La struttura della tabella rimane\n- Può essere reversibile in alcuni DBMS"
+  },
+  {
+    "main-topic": "Database",
+    "topic": "",
+    "object": "What is the clausole HAVING?",
+    "answer": "### HAVING Clause\n- Usata per filtrare i risultati dopo un GROUP BY\n- Si applica dopo l'aggregazione dei dati\n- WHERE filtra prima del GROUP BY, HAVING dopo"
+  },
+  {
+    "main-topic": "Database",
+    "topic": "Definition",
+    "object": "Normalizzazione e denormalizzazione",
+    "answer": "### Normalizzazione\n- Rimozione di dati ridondanti e non consistenti\n- Obiettivo: database più pulito\n- Mantiene l'integrità dei dati\n- Ottimizza lo spazio su disco\n### Denormalizzazione\n- Combina dati da più tabelle in una sola\n- Obiettivo: query più veloci\n- Non mantiene l'integrità dei dati\n- Non ottimizza lo spazio su disco"
+  },
+  {
+    "main-topic": "Database",
+    "topic": "Definition",
+    "object": "What is a database?",
+    "answer": "### Database\nUn database è un insieme di dati memorizzati in modo strutturato e organizzato, accessibili e gestibili tramite un sistema di gestione dei database (DBMS).\n- **Relazionali (SQL):** usano tabelle per organizzare i dati\n- **Non relazionali (NoSQL):** usano documenti, grafi o altri modelli\n- Permettono archiviazione, recupero e gestione efficiente dei dati"
+  },
+  {
+    "main-topic": "Database",
+    "topic": "Indexing",
+    "object": "How does database indexing work?",
+    "answer": "### Database Indexing\n- Simile all'indice di un libro\n- Aiuta a trovare rapidamente i dati\n- Riduce il numero di righe da controllare\n- Migliora le performance delle query con WHERE"
+  },
+  {
+    "main-topic": "Database",
+    "topic": "MongoDB",
+    "object": "In what real-life scenarios should we consider MongoDB for our database?",
+    "answer": "### Quando usare MongoDB\n- Quando non serve un database relazionale\n- Quando si gestiscono grandi quantità di dati\n- In fase di prototipazione\n- Quando si richiede flessibilità nello schema dei dati"
+  },
+  {
+    "main-topic": "Database",
+    "topic": "PostgreSQL",
+    "object": "In PostgreSQL, what is meant by Cluster and Non-Cluster Indexes?",
+    "answer": "### Clustered vs Non-Clustered Indexes in PostgreSQL\n- **Clustered Index:**\n- Ordina fisicamente i dati della tabella secondo l'indice\n- Migliora le performance di query su colonne indicizzate\n- **Non-Clustered Index:**\n- Non modifica l'ordine fisico dei dati\n- Mantiene una struttura separata per l'indice\n- Può essere usato per ricerche rapide senza riordinare la tabella"
+  },
+  {
+    "main-topic": "Database",
+    "topic": "PostgreSQL",
+    "object": "Materialized Views",
+    "answer": "Sono viste fisiche che memorizzano i risultati di una query come tabella reale, non virtuale. A differenza delle view normali (che ricalcolano sempre), le materialized views precalcolano aggregazioni complesse (es. SUM(fatturato) GROUP BY day) e le salvano su disco.\n\n### Esempio: \nCREATE MATERIALIZED VIEW daily_revenue AS SELECT date_trunc('day', order_date) as day, SUM(amount) FROM orders GROUP BY 1; poi REFRESH MATERIALIZED VIEW daily_revenue via cron ogni ora. Query veloci su aggregazioni, refresh manuale/controllo per consistenza forte."
+  },
+  {
+    "main-topic": "Database",
+    "topic": "Query",
+    "object": "How do you optimize SQL queries?",
+    "answer": "### Ottimizzazione delle query SQL\n- **Indicizzazione:** velocizza l'accesso ai dati\n- **SELECT specifico:** evita SELECT * per ridurre I/O\n- **JOIN appropriati:** usa solo i JOIN necessari\n- **Sottoquery:** a volte più efficienti dei JOIN\n- **Alias:** rendono le query più leggibili\n- **Design ottimizzato:** evita dati ridondanti, usa tipi appropriati\n- **Wildcard:** ricerca flessibile\n- **Profiling:** usa strumenti come EXPLAIN per analizzare le query"
+  }
+]

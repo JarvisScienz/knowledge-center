@@ -1,0 +1,80 @@
+[
+  {
+    "main-topic": "Uncategorized",
+    "topic": "",
+    "object": "Cos'è CORS (Cross-Origin Resource Sharing) e a cosa serve?",
+    "answer": "è un meccanismo di sicurezza implementato nei browser che controlla e gestisce le richieste HTTP tra due origini diverse, ovvero due domini, protocolli o porte differenti. \nOrigini diverse, un'origine è composta da protocollo, dominio e porta. Basta che differisca uno di questi tre elementi, le pagine web vengono considerate come origini differenti. Esempio: http://example.com e https://api.example.com sono due origini diverse \nPolitiche Same-Origin, di default i browser hanno un'impostazione predefinita che fa sì che un sito possa accettare richieste solo dalla stessa origine. Questo aiuta a impedire agli script malevoli di accedere a dati o risorse su altri domini \nCORS Headers, includendo specifici Header CORS, il browser sa se è consentita o meno la richiesta proveniente da un'origine diversa. \nAccess-Control-Allow-Origin, L'header più comune utilizzato è 'Access-Control-Allow-Origin'. Questo header specifica quali origini sono autorizzate ad accedere alla risorsa. \nMetodi e Altri Headers, altri headers utilizzabili sono: Access-Control-Allow-Methods e Access-Control-Allow-Headers \n\nUna configurazione errata delle policy CORS possono portare delle vulnerabilità ad attacchi quali CSRF (Cross-Site Request Forgery)."
+  },
+  {
+    "main-topic": "Uncategorized",
+    "topic": "",
+    "object": "Cos'è il long polling?",
+    "answer": "è una tecnica utilizzata per l'invio di informazioni tra server e client. Quando il client fa una richiesta, la connessione viene lasciata aperta fin quando il server non ha le informazioni e risponde. La connessione viene chiusa dopo che le informazioni sono state inviate oppure in caso di timeout."
+  },
+  {
+    "main-topic": "Uncategorized",
+    "topic": "",
+    "object": "Cos'è una Progressive app?",
+    "answer": "Una Progressive Web App (PWA) è un'applicazione web che offre funzionalità simili a quelle di un'applicazione nativa. Le PWA combinano le migliori caratteristiche delle applicazioni web e native.\n\nCaratteristiche principali:\n- Installabile sul dispositivo\n- Funziona offline\n- Push notifications\n- Accesso rapido\n- Aggiornamenti automatici\n\nVantaggi:\n- Non richiede pubblicazione su store\n- Accesso immediato\n- Esperienza utente migliorata\n- Costi di sviluppo ridotti\n- Compatibilità cross-platform"
+  },
+  {
+    "main-topic": "Uncategorized",
+    "topic": "",
+    "object": "Cos'è una Real-time web app?",
+    "answer": "Una Real-time web app è un'applicazione web che fornisce informazioni in tempo reale agli utenti senza necessità di ricaricare la pagina.\n\nCaratteristiche principali:\n- Aggiornamenti istantanei\n- Comunicazione bidirezionale\n- Bassa latenza\n- Connessione persistente\n\nTecnologie utilizzate:\n- WebSocket\n- Server-Sent Events (SSE)\n- Long Polling\n- WebRTC\n\nCasi d'uso comuni:\n- Chat in tempo reale\n- Giochi online\n- Dashboard live\n- Collaborazione in tempo reale\n- Monitoraggio di sistemi"
+  },
+  {
+    "main-topic": "Uncategorized",
+    "topic": "",
+    "object": "Cosa si intende per DevOps?",
+    "answer": "Il termine DevOps indica l'unione delle fasi di sviluppo (dev) e operazioni più legati alla parte IT (ops). Con l'obiettivo di accelerare la fase di sviluppo e rilascio di un prodotto. L'obiettivo principale di DevOps è ridurre al minimo i silos organizzativi tra team di sviluppo e team di operazioni, promuovendo la collaborazione continua e l'automazione dei processi.  Questo approccio enfatizza l'automazione del rilascio, il monitoraggio, la scalabilità e la gestione dei problemi in modo da poter rilasciare applicazioni in modo rapido, affidabile e scalabile."
+  },
+  {
+    "main-topic": "Uncategorized",
+    "topic": "",
+    "object": "Dependency Injection",
+    "answer": "Dependency Injection (DI) è un pattern di design che implementa il principio di inversione delle dipendenze.\n\nDefinizione:\n- Tecnica per fornire le dipendenze a una classe\n- Inverte il controllo del flusso del programma\n- Riduce l'accoppiamento tra le classi\n\nVantaggi:\n- Codice più testabile\n- Maggiore modularità\n- Migliore manutenibilità\n- Riutilizzo del codice\n\nTipi di DI:\n- Constructor Injection\n- Setter Injection\n- Method Injection\n- Field Injection\n\nEsempio:\n```java\npublic class UserService {\n    private final UserRepository repository;\n    \n    public UserService(UserRepository repository) {\n        this.repository = repository;\n    }\n}\n```"
+  },
+  {
+    "main-topic": "Uncategorized",
+    "topic": "",
+    "object": "Distinguish between Hashtable and HashMap.",
+    "answer": "HashMap \nHashTable \nIt is not synchronized and not thread safe \nSynchronized and thread safe \nIt allows one null in key and any number of null in value \nIt does not allow null keys or values \nIt is faster in single thread application \nIt is slower due to synchronization"
+  },
+  {
+    "main-topic": "Uncategorized",
+    "topic": "",
+    "object": "Quali sono le differenze tra i cookies e l'HTTP session?",
+    "answer": "-I cookies vengono memorizzati sul client e la session sul server. I cookies sono modificabili dall'utente e quindi certe operazioni è consigliabile non farle sui cookies."
+  },
+  {
+    "main-topic": "Uncategorized",
+    "topic": "",
+    "object": "REST vs WebSocket",
+    "answer": "WebSocket e i servizi REST sono entrambi utilizzati per la comunicazione tra client e server, ma ci sono alcune differenze significative tra i due. \nWebSocket è un protocollo di comunicazione bidirezionale che consente una connessione persistente tra client e server. È basato su TCP e permette la trasmissione di dati in tempo reale tra le due parti. WebSocket è particolarmente utile per le applicazioni che richiedono una comunicazione in tempo reale o una sincronizzazione continua dei dati, come chat, giochi online o applicazioni di collaborazione. \nI servizi REST (Representational State Transfer) seguono un'architettura client-server basata sul protocollo HTTP. In un servizio REST, le richieste del client vengono inviate al server tramite richieste HTTP (ad esempio GET, POST, PUT, DELETE) e il server risponde con una rappresentazione dello stato delle risorse richieste (spesso in formato JSON o XML). I servizi REST sono ampiamente utilizzati per creare API (Application Programming Interface) che consentono ai client di interagire con le risorse del server in modo standardizzato. \nIn sintesi, WebSocket è più adatto per applicazioni che richiedono una comunicazione bidirezionale in tempo reale, mentre i servizi REST sono ideali per le operazioni stateless basate su richieste HTTP."
+  },
+  {
+    "main-topic": "Uncategorized",
+    "topic": "",
+    "object": "Spiega il Pair Programming",
+    "answer": "Tecnica di programmazione dove due programmatori condividono un solo computer. Un programmatore scrive e l'altro supervisiona se il codice è ben scritto, leggibile e funzionale."
+  },
+  {
+    "main-topic": "Uncategorized",
+    "topic": "",
+    "object": "Spiega il senso del multithreading",
+    "answer": "Il thread è una parte indipendente di un processo o un'applicazione che viene eseguita. Quando si parla di multithreading, si intende l'esecuzione in contemporanea di più thread. Il vantaggio nel multithreading è l'ottimizzazione delle risorse, applicazioni più veloci, se un thread va incontro ad un'eccezione gli altri thread non sono interessati."
+  },
+  {
+    "main-topic": "Uncategorized",
+    "topic": "",
+    "object": "Talk about multi-threading.",
+    "answer": "A thread is defined as the single, sequential flow of the control within a program. It is not the program itself and cannot run on its own. In a running program, a thread may have to dig some of its resources. Multi-threading is a process that is used to improve CPU performance. Through this process, multiple users can manage the program at the same time, or the same user can manage several requests simultaneously. Multi-threading is achieved by executing several processes that the operating system supports.For example, a web browser has multi-threads running simultaneously - while you scroll through a page, you can simultaneously download an application or a document, listen to music, take a print in the background, and more."
+  },
+  {
+    "main-topic": "Uncategorized",
+    "topic": "Definition",
+    "object": "Cosa si indica con i termini Vanilla JS e Vanilla CSS?",
+    "answer": "Si riferisce all'uso puro e non modificato di JavaScript e CSS. Questi termini indicano l'uso delle versioni \"base\" senza l'uso di librerie, framework o preprocessori."
+  }
+]

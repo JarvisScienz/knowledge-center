@@ -1,0 +1,8 @@
+[
+  {
+    "main-topic": "Server",
+    "topic": "",
+    "object": "Differenza tra Kafka e Tomcat",
+    "answer": "Pur essendo entrambi della Apache Software Foundation, sono due prodotti totalmente differenti. Il primo è utilizzato per gestire flussi di dati in tempo reale e analizzare i dati in tempo reale. Il secondo è un server web utilizzato per eseguire applicazioni web Java e gestire richieste HTTP."
+  }
+]

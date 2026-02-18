@@ -1,0 +1,8 @@
+[
+  {
+    "main-topic": "CI/CD",
+    "topic": "Definition",
+    "object": "Cos'è la CI/CD (Continuous Integration, Continuous Delivery)",
+    "answer": "Continuous Integration (CI): È il processo di integrazione automatica dei cambiamenti del codice nel repository principale multiple volte al giorno. Ogni volta che un membro del team fa un commit delle modifiche, un sistema CI esegue una serie di test automatici per assicurarsi che il codice sia funzionante e che non introduca errori nel progetto condiviso. L'obiettivo è rilevare e risolvere i problemi più rapidamente possibile. \nContinuous Delivery (CD): È il processo di automatizzazione della distribuzione del software in un ambiente di produzione o di test, dopo che è stata completata la fase di Continuous Integration. L'idea è quella di rendere possibile il rilascio di nuove versioni del software in qualsiasi momento, garantendo che il processo di distribuzione sia automatizzato, affidabile e reversibile. Se tutti i test di Continuous Integration passano con successo, il software può essere distribuito automaticamente senza intervento manuale.\n\nIn sintesi, CI/CD è una pratica chiave in DevOps che mira a garantire che il codice venga integrato e distribuito in modo continuo e affidabile, riducendo al minimo il rischio di errori e semplificando il processo di rilascio del software."
+  }
+]

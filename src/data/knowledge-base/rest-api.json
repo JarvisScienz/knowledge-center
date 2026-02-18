@@ -1,0 +1,8 @@
+[
+  {
+    "main-topic": "REST API",
+    "topic": "Definition",
+    "object": "How to secure an API?",
+    "answer": "There are several ways to secure an API: \nAuthentication: Use authentication methods like OAuth, JWT, or API keys to ensure that only authorized users can access the API. \nHTTPS: Always use HTTPS to encrypt data in transit and protect sensitive information from being intercepted. \nRate Limiting: Implement rate limiting to prevent abuse and protect the API from DDoS attacks. \nInput Validation: Validate all input data to prevent SQL injection, XSS, and other attacks. \nCORS: Use Cross-Origin Resource Sharing (CORS) to control which domains can access the API. \nLogging and Monitoring: Implement logging and monitoring to track API usage and detect any suspicious activity."
+  }
+]

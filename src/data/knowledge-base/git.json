@@ -1,0 +1,26 @@
+[
+  {
+    "main-topic": "Git",
+    "topic": "",
+    "object": "Qual è la differenza tra git pull e git fetch?",
+    "answer": "In maniera molto semplice, il git pull esegue un git fetch seguito da un git merge. \ngit pull, effettua il merge automatico senza farti revisionare il codice. \ngit fetch, scarica tutte le commit del branch non presenti nel tuo codice locale, ti lascia il compito di revisionarlo e verificare cosa integrare o meno e infine lascia a te il compito di eseguire git merge."
+  },
+  {
+    "main-topic": "Git",
+    "topic": "Flow",
+    "object": "Spiega il workflow di Fork",
+    "answer": "Invece di utilizzare un singolo repository lato server come codebase 'centrale', tramite il fork ogni sviluppatore avrà a disposizione un proprio repository lato server. Di conseguenza, ogni collaboratore non avrà uno, ma due repository Git: uno privato locale e uno pubblico lato server. Il flusso di lavoro di forking è presente più spesso nei progetti open source pubblici. \nIl vantaggio principale del flusso di lavoro di forking è che i contributi possono essere integrati senza che tutti debbano eseguire il push in un unico repository centrale. Gli sviluppatori eseguono il push nei propri repository lato server, mentre il push nel repository ufficiali può essere effettuato solo dal responsabile del progetto, che può quindi accettare commit da tutti gli sviluppatori senza concedere loro l'accesso in scrittura al codebase ufficiale. \nDopo aver creato la propria copia lato server, lo sviluppatore esegue un clone Git per scaricarne una copia sul proprio computer locale. Questo funge da ambiente di sviluppo privato, proprio come negli altri flussi di lavoro. \nQuando è pronto a pubblicare un commit locale, ne esegue il push al proprio repository pubblico, non a quello ufficiale. Quindi, presenta una pull request al repository principale, che consente al responsabile del progetto di sapere che un aggiornamento è pronto per essere integrato. La pull request funge anche da comodo thread di discussione in caso di problemi con il codice fornito. Quello che segue è un esempio dettagliato di questo flusso di lavoro."
+  },
+  {
+    "main-topic": "Git",
+    "topic": "Flow",
+    "object": "Spiega il workflow di Gitflow",
+    "answer": "Il workflow Git prevede due branch che seguono la storia del progetto, master e develop \nMaster, è il branch sempre pronto alla messa in produzione \nHotfix, è usato per il rilascio di rapide patch in produzione \nDevelop, è il branch dove si fanno gli sviluppi. Quando tutto è stato testato e verificato si può fare il marge sul master \nFeature, ogni nuova feature può essere messa qui e successivamente si può effettuare il merge per portarla in Develop"
+  },
+  {
+    "main-topic": "Git",
+    "topic": "Flow",
+    "object": "Spiega il workflow Feature Branch Git",
+    "answer": "L'idea principale alla base del flusso di lavoro Feature Branch è che l'intero sviluppo delle funzionalità avviene in un branch dedicato anziché in quello principale. Questo incapsulamento rende facile per più sviluppatori lavorare su una particolare funzionalità senza toccare la base di codice principale. Significa anche che il ramo principale non conterrà mai codice errato, il che è un enorme vantaggio per gli ambienti di continuous integration."
+  }
+]

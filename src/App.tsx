@@ -4,7 +4,7 @@ import MainContent from './components/MainContent';
 import { KnowledgeEntry, Command } from './types';
 import { KnowledgeData } from './types/KnowledgeData';
 import { addEntryToKnowledgeBase, searchKnowledgeBase, exportKnowledgeBase } from './utils/knowledgeBase';
-import initialData from './data/knowledge-base.json';
+import initialData from './data/knowledge-base';
 import './App.css';
 
 function App() {

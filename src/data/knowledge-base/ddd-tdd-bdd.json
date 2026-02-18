@@ -1,0 +1,8 @@
+[
+  {
+    "main-topic": "DDD, TDD, BDD",
+    "topic": "Definition",
+    "object": "Domain-Driven Development, Test Data-Driven, Business-Driven Development",
+    "answer": "Domain-Driven Development (DDD):  \nSviluppo guidato dal dominio, si mette l'accento sulla comprensione approfondita del dominio o settore specifico. \nCollaborazione diretta tra sviluppatori ed esperti di dominio \nTest Data-Driven (TDD): \nIl focus è sulla creazione di casi di test e dati di test che guidano lo sviluppo \nQuesto approccio è particolarmente utile nei contesti in cui la correttezza e la validità dei dati sono fondamentali (es. software finanziari, medici o scenari di convalida dei dati) \nBusiness-Driven Development: \nIl focus è sulla comprensione delle esigenze e degli obiettivi aziendali che guidano lo sviluppo"
+  }
+]

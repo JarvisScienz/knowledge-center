@@ -1,0 +1,56 @@
+[
+  {
+    "main-topic": "Design Pattern",
+    "topic": "",
+    "object": "Adapter Pattern",
+    "answer": "### Adapter Pattern\n\n- Allows incompatible interfaces to work together\n- Acts as a bridge between two interfaces\n- Wraps one interface to make it compatible with another\n\n**Use Cases:**\n- Integrating legacy code\n- Third-party libraries"
+  },
+  {
+    "main-topic": "Design Pattern",
+    "topic": "",
+    "object": "Decorator Pattern",
+    "answer": "### Decorator Pattern\n\n- Adds new functionality to an object dynamically\n- Does not modify the object's structure\n- Useful for extending behavior at runtime\n\n**Example:**\n- Adding logging, security, or notification features to objects"
+  },
+  {
+    "main-topic": "Design Pattern",
+    "topic": "",
+    "object": "Factory pattern",
+    "answer": "### Factory Pattern\n\n- Defines an interface for creating an object\n- Subclasses alter the type of object created\n- Useful when object creation involves complex logic or depends on conditions\n\n**Example (Java):**\n```java\npublic interface Product {}\npublic class ConcreteProductA implements Product {}\npublic class ConcreteProductB implements Product {}\npublic class Factory {\n  public Product createProduct(String type) {\n    if (type.equals(\"A\")) return new ConcreteProductA();\n    else return new ConcreteProductB();\n  }\n}\n```"
+  },
+  {
+    "main-topic": "Design Pattern",
+    "topic": "",
+    "object": "MVC (Model View Controller) vs MVP (Model View Presenter)",
+    "answer": "### MVC vs MVP\n\n**MVC (Model-View-Controller):**\n- Controller bridges View and Model\n- One controller can select different views\n- Limited unit testing support\n\n**MVP (Model-View-Presenter):**\n- Presenter bridges View and Model\n- One-to-one relationship between View and Presenter\n- Better unit testing support\n- Presenter manages UI logic and state\n\n**Summary Table:**\n| Pattern | Bridge | View Relationship | Unit Testing |\n|---------|--------|------------------|--------------|\n| MVC     | Controller | Many-to-one | Limited      |\n| MVP     | Presenter  | One-to-one   | Better       |"
+  },
+  {
+    "main-topic": "Design Pattern",
+    "topic": "",
+    "object": "Observer pattern",
+    "answer": "### Observer Pattern\n\n- Defines a one-to-many dependency between objects\n- When one object changes state, all dependents are notified\n- Widely used in event-driven systems\n\n**Use Cases:**\n- UI frameworks\n- Event listeners\n- Publish/subscribe systems"
+  },
+  {
+    "main-topic": "Design Pattern",
+    "topic": "",
+    "object": "Strategy pattern",
+    "answer": "### Strategy Pattern\n\n- Allows algorithm behavior to be selected at runtime\n- Defines a family of algorithms, encapsulates each one, and makes them interchangeable\n- Useful for situations with multiple ways to perform an operation\n\n**Example:**\n- Sorting strategies\n- Payment methods"
+  },
+  {
+    "main-topic": "Design Pattern",
+    "topic": "Definition",
+    "object": "",
+    "answer": "**Design patterns** are general solutions to common problems in software design.\n\n- Provide templates or blueprints for solving issues in a specific context\n- Help create flexible, reusable, and scalable code\n\n**Categories:**\n- **Creational:** Object creation mechanisms (e.g., Singleton, Factory)\n- **Structural:** Composition of classes/objects (e.g., Adapter, Decorator)\n- **Behavioral:** Object interaction and responsibilities (e.g., Observer, Strategy)"
+  },
+  {
+    "main-topic": "Design Pattern",
+    "topic": "Definition",
+    "object": "Quali categorie di design pattern conosci? Sapresti indicarmene uno per ciascuna categoria?",
+    "answer": "### Design Pattern Categories\n\n- **Creational:**\n  - Deal with object creation mechanisms\n  - Example: **Singleton**, **Factory**\n- **Structural:**\n  - Concerned with class/object composition\n  - Example: **Adapter**, **Decorator**\n- **Behavioral:**\n  - Deal with object interaction and responsibilities\n  - Example: **Observer**, **Strategy**"
+  },
+  {
+    "main-topic": "Design Pattern",
+    "topic": "Singleton",
+    "object": "Singleton",
+    "answer": "### Singleton Pattern\n\n- Ensures a class has only one instance\n- Provides a global point of access\n- Useful for managing resources (e.g., database connections, configuration)\n\n**Example (Java):**\n```java\npublic class Singleton {\n  private static Singleton instance;\n  private Singleton() {}\n  public static Singleton getInstance() {\n    if (instance == null) {\n      instance = new Singleton();\n    }\n    return instance;\n  }\n}\n```"
+  }
+]

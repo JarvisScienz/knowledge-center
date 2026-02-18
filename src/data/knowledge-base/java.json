@@ -1,0 +1,134 @@
+[
+  {
+    "main-topic": "Java",
+    "topic": "Collections",
+    "object": "Distinguish between Hashtable and HashMap",
+    "answer": "**HashMap vs Hashtable:**\n\n| Feature | HashMap | Hashtable |\n|---------|---------|----------|\n| **Synchronization** | Not synchronized, not thread safe | Synchronized and thread safe |\n| **Null values** | Allows one null key and any number of null values | Does not allow null keys or values |\n| **Performance** | Faster in single thread applications | Slower due to synchronization |\n| **Inheritance** | Extends AbstractMap class | Extends Dictionary class |\n| **Iteration** | Fail-fast iterator | Enumerator is not fail-fast |\n| **Introduction** | Introduced in Java 1.2 | Present since Java 1.0 |"
+  },
+  {
+    "main-topic": "Java",
+    "topic": "Definition",
+    "object": "Best practices for overloading and overriding in terms of code quality and maintainability",
+    "answer": "**Best practices for code quality and maintainability:**\n\n**Overloading:**\n- Use when variants clearly serve different needs\n- Limit overloading to cases where it adds real flexibility\n- Avoid overloading that reduces code readability\n- Good for different versions of constructors\n\n**Overriding:**\n- Use for specializing behaviors within a class hierarchy\n- Be cautious in complex inheritance structures\n- Avoid unexpected behaviors in subclasses\n- Ensure clear and maintainable code structure"
+  },
+  {
+    "main-topic": "Java",
+    "topic": "Definition",
+    "object": "Encapsulation",
+    "answer": "**Encapsulation** is a fundamental OOP concept that restricts direct access to an object's internal state.\n\n**Implementation:**\n- Declare class fields as private\n- Provide public getter and setter methods\n- Control how fields are accessed and modified\n\n**Key Purposes:**\n- **Data protection**\n- **Controlled Access**\n- **Increased Flexibility and Maintainability**\n- **Improved Readability**"
+  },
+  {
+    "main-topic": "Java",
+    "topic": "Definition",
+    "object": "Exception Runtime vs Compile Time",
+    "answer": "Java Exceptions are categorized into two types:\n\n**Runtime Exceptions (Unchecked):**\n- Occur during program execution\n- Examples: `NullPointerException`, `ArrayIndexOutOfBoundsException`\n- Not required to be handled explicitly\n- Extend `RuntimeException`\n\n**Compile Time Exceptions (Checked):**\n- Detected by compiler\n- Must be handled explicitly\n- Can be handled using:\n  - try-catch blocks\n  - throws declaration\n- Extend `Exception` class"
+  },
+  {
+    "main-topic": "Java",
+    "topic": "Definition",
+    "object": "Overloading",
+    "answer": "**Overloading** is a feature that allows multiple methods to share the same name within the same class but differ in parameters.\n\n**Key points:**\n- Methods must differ in parameters (number, type, or order)\n- Return type is not part of the method signature\n- It's a form of **static polymorphism**, resolved at compile-time\n\n**Use cases:**\n- When you want to perform similar operations with different input options\n- When you need to provide multiple ways to initialize an object"
+  },
+  {
+    "main-topic": "Java",
+    "topic": "Definition",
+    "object": "Overloading vs Overriding",
+    "answer": "**Key differences:**\n- **Overloading** occurs within the same class\n- **Overriding** occurs in subclasses\n- You can overload a method from the superclass with a different signature\n- You cannot overload and override the same method in the same class\n- **Overriding** is about changing behavior, while **overloading** is about providing different ways to call a method"
+  },
+  {
+    "main-topic": "Java",
+    "topic": "Definition",
+    "object": "Overriding",
+    "answer": "**Overriding** is a feature that allows a subclass to provide a specific implementation of a method that is already defined in its superclass.\n\n**Key points:**\n- The method in the subclass must have the same signature (name and parameters) as the superclass method\n- The return type must be the same or a covariant type\n- It's an example of **dynamic polymorphism**, resolved at runtime\n\n**Use cases:**\n- When you want a subclass to provide a specific implementation of a method defined in the superclass\n- When you need to modify the behavior of an inherited method"
+  },
+  {
+    "main-topic": "Java",
+    "topic": "Definition",
+    "object": "Polymorphism",
+    "answer": "**Polymorphism** is a core concept in Java that allows a single method, class, or interface to operate in different ways based on the context.\n\n**Types of Polymorphism:**\n\n**1. Compile-time (Static) Polymorphism:**\n- Achieved through method overloading\n- Multiple methods with same name but different parameters\n- Method to be called is determined at compile-time\n\n**2. Runtime (Dynamic) Polymorphism:**\n- Achieved through method overriding\n- Subclass provides specific implementation of superclass method\n- Method to be executed is determined at runtime\n- Based on actual object type, not reference type"
+  },
+  {
+    "main-topic": "Java",
+    "topic": "Definition",
+    "object": "What are the appropriate uses of abstract classes and interfaces in Java?",
+    "answer": "**Appropriate uses of abstract classes and interfaces in Java:**\n\n**Abstract Classes:**\n- When you want to share code among several related classes\n- When you have some common implementation that subclasses will inherit\n- When you want to declare non-public members\n- When you need to define constructors\n- When you want to provide a base implementation that can be extended\n\n**Interfaces:**\n- When you want to define a contract that multiple unrelated classes can implement\n- When you want to specify the behavior of a particular data type\n- When you want to separate the definition of a service from its implementation\n- When you want to achieve multiple inheritance\n- When you want to define a common API for a group of classes\n\n**Best Practices:**\n- Use interfaces for defining behavior\n- Use abstract classes for sharing code\n- Prefer interfaces over abstract classes when possible\n- Use abstract classes when you need to maintain state"
+  },
+  {
+    "main-topic": "Java",
+    "topic": "Definition",
+    "object": "What are the risks of improper use of the synchronized clause?",
+    "answer": "Improper use of synchronized can lead to several issues:\n\n**1. Deadlock:**\n- Occurs when threads wait for each other to release locks\n- Caused by poor lock acquisition ordering\n- Results in complete system standstill\n\n**2. Performance Bottlenecks:**\n- Excessive locking can slow down execution\n- Threads may wait unnecessarily\n- Reduced system throughput\n\n**3. Reduced Concurrency:**\n- Unnecessary synchronization restricts parallel execution\n- Limits multi-threading benefits\n- Serializes execution unnecessarily\n\n**4. Starvation:**\n- Some threads may experience prolonged wait times\n- Higher-priority threads may monopolize resources\n- Can lead to system imbalance"
+  },
+  {
+    "main-topic": "Java",
+    "topic": "Definition",
+    "object": "What is an abstract class?",
+    "answer": "An **abstract class** in Java is a class that cannot be instantiated directly and may contain both abstract and concrete methods.\n\n**Key Features:**\n- Cannot be instantiated with `new` keyword\n- Can contain both abstract methods (without implementation) and concrete methods (with implementation)\n- Can have constructors, instance variables, and static methods\n- Subclasses must implement all abstract methods\n- Used to provide a common base for related classes\n- Supports single inheritance only"
+  },
+  {
+    "main-topic": "Java",
+    "topic": "Definition",
+    "object": "What is an abstract class?",
+    "answer": "An abstract class in Java is a class that cannot"
+  },
+  {
+    "main-topic": "Java",
+    "topic": "Definition",
+    "object": "What is an interface?",
+    "answer": "An **interface** in Java is a reference type that defines a contract for classes to implement.\n\n**Key Features:**\n- Can contain abstract methods (without body) and constants\n- A class can implement multiple interfaces\n- Supports multiple inheritance\n- All methods are implicitly public and abstract\n- All variables are implicitly public, static, and final\n- Provides a way to achieve abstraction and loose coupling"
+  },
+  {
+    "main-topic": "Java",
+    "topic": "Definition",
+    "object": "What is an interface?",
+    "answer": "An interface in Java is a reference type that defines a contract for classes to implement. It can contain abstract methods (without body) and constants. A class can implement multiple interfaces."
+  },
+  {
+    "main-topic": "Java",
+    "topic": "Definition",
+    "object": "What is garbage collection?",
+    "answer": "**Garbage collection** is the process by which Java automatically manages memory by reclaiming memory occupied by objects that are no longer reachable or needed by the program.\n\n**Key Features:**\n- Automatic memory management\n- Prevents memory leaks\n- Improves application performance\n- Runs in background\n- Uses various algorithms for optimization"
+  },
+  {
+    "main-topic": "Java",
+    "topic": "Definition",
+    "object": "What is garbage collection?",
+    "answer": "Garbage collection is the process by which Java automatically manages memory by reclaiming memory occupied by objects that are no longer reachable or needed by the program."
+  },
+  {
+    "main-topic": "Java",
+    "topic": "Definition",
+    "object": "When is it appropriate to declare a Java method as synchronized?",
+    "answer": "A method should be declared as **synchronized** when:\n\n- Operating on shared resources accessed by multiple threads\n- Ensuring mutual exclusion is required\n- Preventing race conditions\n\n**Typical scenarios:**\n- Modifying shared variables or data structures\n- Performing operations that require specific sequence\n- When thread safety is critical\n- When data consistency must be maintained"
+  },
+  {
+    "main-topic": "Java",
+    "topic": "Definition",
+    "object": "Why is Java not a pure object-oriented language?",
+    "answer": "Java is not a pure object-oriented language because:\n\n- **Primitive data types**: It supports primitive data types (`int`, `double`, `char`) which are not objects\n- **Static methods and variables**: These features break the pure object-oriented paradigm where everything should be an object\n- **Procedural programming**: You can write procedural code without creating objects"
+  },
+  {
+    "main-topic": "Java",
+    "topic": "Definition",
+    "object": "Would you declare any method of a singleton factory as synchronized?",
+    "answer": "**Yes**, synchronization is often appropriate in a singleton factory, particularly for:\n\n- Creating or initializing the singleton instance\n- Preventing multiple instance creation\n- Ensuring thread safety during instance creation\n\n**This is necessary because:**\n- Multiple threads might try to access the factory method simultaneously\n- Without proper synchronization, multiple instances could be created\n- The singleton pattern's main goal is to ensure only one instance exists"
+  },
+  {
+    "main-topic": "Java",
+    "topic": "Distributed transactions",
+    "object": "What are distributed transactions?",
+    "answer": "**Distributed transactions** are operations that maintain consistency across multiple services or databases.\n\n**Key Characteristics:**\n- Operations span multiple data repositories\n- Can involve multiple nodes in a network\n- Follows ACID principles:\n  - **Atomicity**\n  - **Consistency**\n  - **Isolation**\n  - **Durability**\n\n**Implementation Methods:**\n- Two-Phase Commit (2PC) protocol\n- Saga Pattern\n\n**Possible Outcomes:**\n1. All operations complete successfully\n2. No operations are performed (in case of failure)"
+  },
+  {
+    "main-topic": "Java",
+    "topic": "Thread",
+    "object": "Describe the life cycle of the thread",
+    "answer": "**Thread Life Cycle States:**\n\n**1. New:**\n- Thread is created but not started\n- Ready to begin execution\n\n**2. Runnable:**\n- Thread is running or ready to run\n- Waiting for CPU allocation\n\n**3. Blocked:**\n- Thread is temporarily suspended\n- Waiting for resource or event\n\n**4. Waiting:**\n- Thread is waiting for another thread\n- Waiting for specific time period\n\n**5. Terminated:**\n- Thread has completed its task\n- Has been terminated by another thread"
+  },
+  {
+    "main-topic": "Java",
+    "topic": "Thread",
+    "object": "What are threads in Java?",
+    "answer": "**Threads** in Java are subprocesses that:\n\n- Use shared memory but act independently\n- Can handle exceptions without affecting other threads\n- Represent single program execution\n- Support multithreading for parallel tasks\n\n**Benefits:**\n- Improved program efficiency\n- Better resource utilization\n- Parallel task execution\n- Independent exception handling"
+  }
+]

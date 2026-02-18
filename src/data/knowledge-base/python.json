@@ -1,0 +1,8 @@
+[
+  {
+    "main-topic": "Python",
+    "topic": "Definition",
+    "object": "What are the advantages of using Python language?",
+    "answer": "Easy implementation: Python is relatively easy to learn and write compared to other programming languages such as Java and C++. \nExtensive support libraries: It has Pandas for data analytics, NumPy for numerical calculations, etc. \nFree and open-source: Python is a free and open-source language with a large active community base. \nDynamically typed language: We don't need to mention data type in Python; it automatically takes the data type. \nVast libraries support: Python has rich and efficient libraries making it easier for developers. \nInterpreted language: Python is an interpreted language with line-by-line code execution, contributing to easier debugging and portability. \nSuitable for data analysis: It helps data scientists easily simplify complex numeric computing operations."
+  }
+]

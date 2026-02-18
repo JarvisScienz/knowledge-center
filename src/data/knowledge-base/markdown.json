@@ -1,0 +1,8 @@
+[
+  {
+    "main-topic": "Markdown",
+    "topic": "Examples",
+    "object": "Markdown Formatting Examples",
+    "answer": "# Markdown Examples\n\n## Text Formatting\n\nThis is **bold text** and this is *italic text*. You can also use ~~strikethrough~~.\n\n## Code Examples\n\nHere's a simple Node.js code example:\n\n```javascript\nconst express = require('express');\nconst app = express();\n\napp.get('/', (req, res) => {\n  res.send('Hello World!');\n});\n\napp.listen(3000, () => {\n  console.log('Server running on port 3000');\n});\n```\n\n## Lists\n\n### Unordered List\n\n* Item 1\n* Item 2\n* Item 3\n\n### Ordered List\n\n1. First item\n2. Second item\n3. Third item\n\n## Links and Images\n\n[Visit our website](https://example.com)\n\n## Blockquotes\n\n> This is a blockquote\n> It can span multiple lines\n\n## Tables\n\n| Header 1 | Header 2 |\n|----------|----------|\n| Cell 1   | Cell 2   |\n| Cell 3   | Cell 4   |"
+  }
+]

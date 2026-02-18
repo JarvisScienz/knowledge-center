@@ -1,0 +1,32 @@
+[
+  {
+    "main-topic": "React",
+    "topic": "Components",
+    "object": "What is the difference between functional and class components?",
+    "answer": "Functional components are simpler JavaScript functions that return JSX, while class components are ES6 classes that extend React.Component. Functional components can now use hooks to manage state and lifecycle, making them more flexible and easier to test."
+  },
+  {
+    "main-topic": "React",
+    "topic": "Definition",
+    "object": "What are State and Prop?",
+    "answer": "State - The term \"State\" in React Js refers to a type of variable that exists inside a component and is used to store data or information about the component. The state has a similar working principle as that of a local variable it cannot be accessed or modified outside its component. To modify the state we have to use this.setState, when this is applied the state class re-renders itself. \nProp -  In React Js, the term \"Prop\" is an alias name given to properties where it acts like an object which is used to store attribute values associated with various types of tags. The working principle of props is similar to HTML attributes. Props behave as a read-only component in React Js. Props are immutable."
+  },
+  {
+    "main-topic": "React",
+    "topic": "Definition",
+    "object": "What is HOC in React Js?",
+    "answer": "HOC in React Js refers to Higher-Order Components which is a type of advanced method used by the developers for reusing the logic of a component's functionality. It takes the previously developed original component and after processing it returns the enhanced results."
+  },
+  {
+    "main-topic": "React",
+    "topic": "Hooks",
+    "object": "What are React Hooks?",
+    "answer": "React Hooks are functions that let you use state and other React features in functional components. They were introduced in React 16.8 to allow functional components to have state and lifecycle methods."
+  },
+  {
+    "main-topic": "React",
+    "topic": "State Management",
+    "object": "What is Redux?",
+    "answer": "Redux is a predictable state container for JavaScript applications. It helps manage the application state in a single store, making it easier to understand and debug. Redux uses actions, reducers, and a central store to manage state changes."
+  }
+]
